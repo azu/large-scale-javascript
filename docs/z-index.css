@@ -1,0 +1,23 @@
+/*
+  z-indexの値を管理するCSSファイルです。
+  z-indexを指定する場合はここにかかれてい値を元にしてください。
+
+  z-indexは値の強さだけではなく、スタックコンテキストによっても左右されます。
+  https://app.codegrid.net/entry/z-index-1
+
+  定義している値は、同一スタックコンテキストにおける前後関係のための値となっています。
+*/
+
+:root {
+  /* 最背面 */
+  --z-index--below: -1;
+  /* デフォルト */
+  --z-index--default: 1;
+  /*
+    最前面
+    IAB Z-index Guidelineがベース
+    http://qiita.com/armorik83/items/85cf705aaee6a34af4bb
+    http://www.iab.com/guidelines/z-index-guidelines/
+   */
+  --z-index--front: 6000001;
+}
