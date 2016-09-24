@@ -13,8 +13,8 @@
 - [参考資料](./refs.md)
     - アーキテクチャを考えるときに参考にしたもの
 
-以下は雑多なポエム]です。
-考え始めたときににこういう情報を教えてくれる人がいれば助かったのにな、というのを書いて置いておくところです。
+以下は雑多なポエムです。
+考え始めたときににこういう情報を教えてくれる人がいれば助かったのにな、というのを書いたものです。
 
 Inspired by [https://github.com/tokuhirom/java-handbook](https://github.com/tokuhirom/java-handbook)
 
