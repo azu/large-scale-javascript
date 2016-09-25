@@ -29,7 +29,7 @@ State の入れ子は作らないため、基本的には store/ 直下に entit
 Component を意識した形になるので、大きくなりすぎず、逆に細かく分けすぎて情報のかぶりがあまりでないように State を分ける。
 
 ### Component を意識したプロパティの作成
-例えば Component の HogeButton を非表示にしたい場合  
+例えば Component の HogeButton を非表示にしたい場合は次のようにする。
 
 Containerに渡すHogeStateに`isHidden`のようなプロパティを追加する
 

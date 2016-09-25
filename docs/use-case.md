@@ -71,7 +71,6 @@ dispatch 関数の引数には以下の様な形式のオブジェクトを渡�
 
 #### dispatch 関数 と `type` 定数
 payloadオブジェクトの `type` に利用する定数はUseCaseクラス内にstaticで定義する。
-(static class propertyは
 
 ```js
 export class EnterTagEditingUseCase extends UseCase {
