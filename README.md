@@ -1,7 +1,16 @@
 # 複雑なJavaScriptアプリケーションを作るために考えること
 > Patterns For Large-Scale JavaScript Application Architecture
 
-具体的なドキュメントは次を読む
+## 構成
+
+- [Babel](http://babeljs.io/ "Babel")
+- [React](https://facebook.github.io/react/ "React")
+- [Almin.js](https://github.com/almin/almin "Almin.js")
+- [PostCSS](https://github.com/postcss/postcss "PostCSS")
+
+## ドキュメント
+
+具体的なコーディングルールなどのドキュメントは次を読む。
 
 - [docs](./docs) - 目次や全体像について
     - [css.md](./docs/css.md)
@@ -160,24 +169,16 @@ optionalだと型が違った場合にエラーがでないので、typoもエ�
     };
 ```
 
-ドメインなどもどうようにエラーとなるテストを書くところから始める。
+ドメインなども同様にエラーとなるテストを書くところから始める。
 
 ## 気付けることはいいこと
 
-開発中はできるだけログをだし、どこで動作がおかしくなったのかを追跡できるようにしているといい。
+開発中はできるだけデバッグログをだし、どこで動作がおかしくなったのかを追跡できるようにしているといい。
 そのためにはデフォルトは厳しくし、不要なら例外的に外すような作りにしていく必要がある。
-
-たとえば、React ContextはContainer Componentのみが使えるが、
-これは次のルールで成り立っている。
-
-1. React Contextは禁止
-2. Containerだけホワイトリストで許可
-
-JavaScriptやUIはエラーに気づきにくいので、デフォルトがエラーとなるように寄せたほうがいい。
 
 ## 気づけないことはよくないこと
 
-- ログが増えすぎると埋もれてしまい無視してしまうことがある。
+- デバッグログが増えすぎると埋もれてしまい無視してしまうことがある。
 - Lintを増やすと警告がでてるのを無視してしまうことがある。
 - JSDocの型が嘘をついていて気づかないうちに不正な値が入ってる。
 
@@ -195,7 +196,18 @@ JavaScriptやUIはエラーに気づきにくいので、デフォルトがエ�
 
 ドキュメントに書いてあっても、気づけないならそれは形骸化する可能性がある。
 
-例えば、UseCaseクラスは次のルールで実装するというドキュメントがあるとする
+### React Contextのルール
+
+たとえば、React ContextはContainer Componentのみが使えるというルールにしている。
+このルールを知らない人は、Project componentでもContextを使った方が楽なので使ってしまう。
+
+そのため、[eslint-plugin-no-allow-react-context](https://github.com/azu/eslint-plugin-no-allow-react-context "eslint-plugin-no-allow-react-context")というESLintのルールを書いて、Contextを使える場所を限定している。
+
+このようなルールは機械的に判断して、間違った書き方をしたらエラーとなるようにした方がいい。
+
+### UseCaseとFactoryのルール
+
+例えば、UseCaseクラスは次のルールで実装するというルールにもなっている。
 
 - ファイル名と同名のUseCaseクラスをexportしている
 - `ファイル名+Factory`のUseCaseのFactoryクラスをexportしている
@@ -240,9 +252,14 @@ describe('MetaUseCase testing', () => {
 ESLintなどのプラグインを書けば、静的にチェックできる部分も多いはずなので、
 1時間以内に書けそうな感じならさっさと書いてしまう方が良い。
 
+レビューで指摘する前に、機械的にチェックして落とした方が全体が良くなる。
+
+- [フロントエンド<チーム開発 />成功の裏話 - の裏話](http://tech.dcube.io/2016/08/frontend-team-development.html)
+- [文書執筆の指南書で解説されている問題点を RedPen で発見する - Qiita](http://qiita.com/takahi-i/items/a8b994ef17fd66fe6237)
+
 ## CoCはできるだけ減らす
 
-DDDはCoCと相性が良くないという話もあるが、
+DDDはCoC([convention over configuration](https://ja.wikipedia.org/wiki/%E8%A8%AD%E5%AE%9A%E3%82%88%E3%82%8A%E8%A6%8F%E7%B4%84 "convention over configuration"))と相性が良くないという話もあるが、
 CoCが増えるとプロジェクトに参加する人が覚える事が増えるため、できるだけ普通に書けるようにする。
 
 例えば、babel-preset-es2015だけの変換だと、エラーを継承したカスタムエラーは作れない。
@@ -359,3 +376,11 @@ UIがあるならステートレスなコンポーネントとしてUIから作�
 
 メッセージの翻訳は仕組み上色々漏れが生まれやすい。
 漏れが生まれにくい仕組みにする事が重要。
+
+## サーバに習う
+
+[Almin.js](https://github.com/almin/almin "Almin.js")とReactを使ったアーキテクチャは、
+サーバ側のようなデータフローを行えるようになってる。
+なので、「この場合はどうするのがいいんだろ？」というときにサーバ側ではどうやってるかを考えるのも参考になる。
+
+例えばルーティングとかをクライアントサイドでやる場合に、サーバではどのようにやるのが一般的なのかを考えるなど。
