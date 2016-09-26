@@ -8,15 +8,12 @@
 作成するアプリケーションによって必要な構造は異なるため、この構成がよいということを主張するものではありませんが、
 何か参考になるものがあれば幸いです。
 
-Written by @[azu](https://github.com/azu "azu").
+Written by azu [![github][github]][@azu] [![twitter][twitter]][@azu_re]
 
-## 目的
-
-- 難しいものを簡単に作れないため、難しいものは考えて作るしかない
-- 考えて作るためには、議論できる言語化されたもの(コード)が必要
-    - 長期的にメンテナンスするならこの傾向はより必要
-- ルールは明確に、でも最初から明確なワケではない
-- 議論できるベースをどのように作っていくかについて
+[@azu]: https://github.com/azu
+[@azu_re]: https://twitter.com/azu_re
+[twitter]: http://i.imgur.com/wWzX9uB.png "twitter icon"
+[github]: http://i.imgur.com/9I6NRUm.png "github icon"
 
 ## 140文字でOK
 
@@ -25,6 +22,14 @@ Written by @[azu](https://github.com/azu "azu").
 > JavaScriptで複雑なアプリケーションを作る構成と実践ガイド。
 > ドメインモデルをどのように考えて作っていくかについて。
 > Babel、React、Almin、PostCSSがベース。
+
+## 目的
+
+- 難しいものを簡単に作れないため、難しいものは考えて作るしかない
+- 考えて作るためには、議論できる言語化されたもの(コード)が必要
+    - 長期的にメンテナンスするならこの傾向はより必要
+- ルールは明確に、でも最初から明確なワケではない
+- 議論できるベースをどのように作っていくかについて
 
 ## 複雑なものってどんなもの？
 
