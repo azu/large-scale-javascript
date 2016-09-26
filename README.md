@@ -377,6 +377,10 @@ BEMなども同じような仕組みを持っている。
 
 ショッピングカートを実装してみると必要性が分かる。
 
+- [voronianski/flux-comparison: Practical comparison of different Flux solutions](https://github.com/voronianski/flux-comparison "voronianski/flux-comparison: Practical comparison of different Flux solutions")
+- [almin/example/shopping-cart at master · almin/almin](https://github.com/almin/almin/tree/master/example/shopping-cart "almin/example/shopping-cart at master · almin/almin")
+    - ショッピングカートをAlminで実装したもの
+
 ## 1F
 
 ユーザの入力に対して1F以内に反応を適用しないと体験が良くないケースはある。
