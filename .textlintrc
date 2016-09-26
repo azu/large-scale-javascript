@@ -4,7 +4,12 @@
   },
   "rules": {
     "preset-ja-spacing": true,
-    "preset-ja-technical-writing": true,
+    "preset-ja-technical-writing": {
+      "no-exclamation-question-mark": {
+        // allow to use ?
+        "allowHalfWidthQuestion": falseb
+      }
+    },
     "prh": {
       "rulePaths": [
         "./prh.yml"

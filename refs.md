@@ -15,14 +15,14 @@
 
 DDD本の中では一番読みやすくためになることが多い。
 アーキテクトの話なども参考になる。
-またDDDの文脈で出てくるモデルやリポジトリなどは、人によって言ってる事が違うという事実をちゃんと注記してくれている。
-CQRSについてはこの本を読むと良い。
+またDDDの文脈で出てくるモデルやリポジトリなどは、人によって言ってることが違うという事実をちゃんと注記してくれている。
+CQRSについてはこの本を読むとよい。
 
 ## [Patterns, Principles, and Practices of Domain-Driven Design - Wrox](http://www.wrox.com/WileyCDA/WroxTitle/Patterns-Principles-and-Practices-of-Domain-Driven-Design.productCd-1118714709.html "Patterns, Principles, and Practices of Domain-Driven Design - Wrox")
 
 DDDについて分かりやすく書かれてる書籍。
 DDD本/IDDD本が分かりにくいところを分かりやすく書こうとした感じのする内容。
-DDDに興味がある人は読むと良い感じな気がする。
+DDDに興味がある人は読むとよい感じな気がする。
 
 ## [オブジェクト開発の神髄](http://bpstore.nikkeibp.co.jp/item/books/P82370.html "オブジェクト開発の神髄")
 
@@ -51,15 +51,15 @@ Store/StateはViewModelとかなり近いものになっていくのではとい
 
 ## [Defining data stores | MobX](http://mobxjs.github.io/mobx/best/store.html "Defining data stores | MobX")
 
-ViewのためのStoreとDomainのためのStoreという考え方について
+ViewのためのStoreとDomainのためのStoreという考え方について。
 
 ## [クリーンアーキテクチャ(The Clean Architecture翻訳)](http://blog.tai2.net/the_clean_architecture.html "クリーンアーキテクチャ(The Clean Architecture翻訳)")
 
-クリーンアーキテクチャの訳
+クリーンアーキテクチャの訳。
 
 ## [持続可能な開発を目指す ~ ドメイン・ユースケース駆動（クリーンアーキテクチャ） + 単方向に制限した処理 + FRP - Qiita](http://qiita.com/kondei/items/41c28674c1bfd4156186 "持続可能な開発を目指す ~ ドメイン・ユースケース駆動（クリーンアーキテクチャ） + 単方向に制限した処理 + FRP - Qiita")
 
-データの流れについて確認するときに見てた
+データの流れについて確認するときに見てた。
 
 ## [DDD + Clean Architecture + UCDOM Essence版 // Speaker Deck](https://speakerdeck.com/yoskhdia/ddd-plus-clean-architecture-plus-ucdom-essenceban "DDD + Clean Architecture + UCDOM Essence版 // Speaker Deck")
 
@@ -67,7 +67,7 @@ ViewのためのStoreとDomainのためのStoreという考え方について
 
 ## [Scalaで学ぶヘキサゴナルアーキテクチャ実践入門 // Speaker Deck](https://speakerdeck.com/kimutyam/scaladexue-buhekisagonaruakitekutiyashi-jian-ru-men "Scalaで学ぶヘキサゴナルアーキテクチャ実践入門 // Speaker Deck")
 
-依存関係逆転の原則(DIP)について分かりやすい解説
+依存関係逆転の原則(DIP)について分かりやすい解説。
 
 ## [ECSS: Home Page](http://ecss.io/ "ECSS: Home Page")
 
@@ -82,7 +82,7 @@ CSSのstateの考え方について参考にした。
 
 `.is-state`をファイルとして切り出すのはオリジナルルールだけど、
 とにかくCSSはステートを持たせたくないため、常に一覧できるようにするためのルールとして入れた
-`will-change`などでステートを切り替わることを明示できるので、ファイルとして切り出されてるのと意味論的に良い感じになった。
+`will-change`などでステートを切り替わることを明示できるので、ファイルとして切り出されてるのと意味論的によい感じになった。
 
 ## [僕がネイティブな CSS 変数にわくわくする理由](http://terkel.github.io/why-im-excited-about-native-css-variables/ "僕がネイティブな CSS 変数にわくわくする理由")
 
@@ -98,7 +98,7 @@ Atomic DesignをやるとCSSの詳細度が一定になるという話。
 ## [Clean Architecture + DDD + Redux + RxJavaをAndroidでやるときにどこまで分割するか問題 - うさみみを生やせ](http://izumin.hateblo.jp/entry/2016/01/24/221943)
 > [#DroidKaigi 2016で登壇してきた - うさみみを生やせ](http://izumin.hateblo.jp/entry/2016/02/21/170909)
 
-Androidでの話
+Androidでの話。
 
 ## [[ Android ] – これからの「設計」の話をしよう – NET BIZ DIV. TECH BLOG](https://tech.recruit-mp.co.jp/mobile/android-architecture/ "[ Android ] – これからの「設計」の話をしよう – NET BIZ DIV. TECH BLOG")
 
@@ -106,7 +106,7 @@ Androidでの話
 
 ## [いまさらきけない「ドメインモデル」と「トランザクションスクリプト」](http://d.hatena.ne.jp/higayasuo/20080519/1211183826 "いまさらきけない「ドメインモデル」と「トランザクションスクリプト」")
 
-トランザクションスクリプトとドメインモデルについて
+トランザクションスクリプトとドメインモデルについて。
 
 ## [DDD: ImmutableなEntityの実装方法〜ステートソーシングなEntityとイベントソーシングなEntity〜 - Qiita](http://qiita.com/suin/items/f559e3dcde7c811ed4e1 "DDD: ImmutableなEntityの実装方法〜ステートソーシングなEntityとイベントソーシングなEntity〜 - Qiita")
 
@@ -122,11 +122,11 @@ Androidでの話
 
 ## [最新DDDアーキテクチャとAkkaでの実装ヒントについて // Speaker Deck](https://speakerdeck.com/j5ik2o/zui-xin-dddakitekutiyatoakkadefalseshi-zhuang-hintonituite "最新DDDアーキテクチャとAkkaでの実装ヒントについて // Speaker Deck")
 
-CQRS + ES の話として
+CQRS + ESの話として。
 
 ## [20110409_DevLOVE「Building Blocks」_都元ダイスケさん - YouTube](https://www.youtube.com/watch?v=FNEfk-dlIKU "20110409_DevLOVE「Building Blocks」_都元ダイスケさん - YouTube")
 
-DDDはパターン集であるという話
+DDDはパターン集であるという話。
 
 
 ## [実践ドメイン駆動設計](http://www.shoeisha.co.jp/book/detail/9784798131610 "実践ドメイン駆動設計")
@@ -148,7 +148,7 @@ DDD, CQRS, ES
 > -- http://pdc-bsp.blog.so-net.ne.jp/2012-03-10
 
 この話はIDDDでも出てきていた、最後の方で関数型言語でも適正があると話
-これはイベントソーシングは追記オンリーの実装ができるため、関数型言語でよく見られる不変性を扱いやすい
+これはイベントソーシングは追記オンリーの実装ができるため、関数型言語でよく見られる不変性を扱いやすい。
 
 ## [エンタープライズアプリケーションアーキテクチャパターン](http://www.shoeisha.co.jp/book/detail/9784798105536 "エンタープライズアプリケーションアーキテクチャパターン")
 
@@ -173,7 +173,7 @@ IAという言葉もやはり変化していると思って探して見つけた
 
 ## [企業情報システムアーキテクチャ](https://www.amazon.co.jp/dp/B00N0SRXBI/ "企業情報システムアーキテクチャ")
 
-企業システムのアーキテクチャの話として見た
+企業システムのアーキテクチャの話として見た。
 
 ## [パターン・ランゲージ: 創造的な未来をつくるための言語](https://www.amazon.co.jp/dp/4766419871/ "パターン・ランゲージ: 創造的な未来をつくるための言語")
 
@@ -181,7 +181,7 @@ IAという言葉もやはり変化していると思って探して見つけた
 
 DDDもパターン集であるため、この源流はやはりこの辺にあるのではと思って調べていた。
 IAの話もそうだけど、構造化の考え方などは都市構造の考えの話とも一致している感じがする。
-また、
+また、。
 
 > 「何を」作るのかを支援するというもの、抽象的な形で提供される  
 > パターンはデザインを支援する。良いデザインは問題を解決する  

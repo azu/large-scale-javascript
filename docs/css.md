@@ -1,15 +1,15 @@
 # CSS
 
-CSSとはレイアウトとコンポーネントのデザインをするもの
+CSSとはレイアウトとコンポーネントのデザインをするもの。
 
 ## 場所
 
-- `src/component/` 以下にはそれぞれのコンポーネントに対するCSSを置く
+- `src/component/` 次にはそれぞれのコンポーネントに対するCSSを置く
 - `src/css/` にはベースや変数など全体として適応されるものを置く
 
 ## 分類
 
-コンポーネントに関連するCSSはコンポーネント単位でJavaScriptと同居するので同じルールが適応される
+コンポーネントに関連するCSSはコンポーネント単位でJavaScriptと同居するので同じルールが適応される。
 
 - src/component/container/
     - ページから見たレイアウトを扱える
@@ -19,7 +19,7 @@ CSSとはレイアウトとコンポーネントのデザインをするもの
 - src/component/ui-kit/
     - ui-kitに対するスタイル
 
-コンポーネント以外のCSSは `src/css` に配置する
+コンポーネント以外のCSSは `src/css` に配置する。
 
 - src/css/base.css
     - 指定要素や`*`に対して適応するベースのCSS
@@ -30,8 +30,8 @@ CSSとはレイアウトとコンポーネントのデザインをするもの
 
 ## CSSの読み込みについて
 
-全てのCSSは `src/index.css` から `postcss-easy-import` のワイルドカードで読み込まれる。
-CSSの読み込みについては次の点に注意する
+すべてのCSSは `src/index.css` から `postcss-easy-import` のワイルドカードで読み込まれる。
+CSSの読み込みについては次の点に注意する。
 
 - Base CSSは最初に読み込まれる
 - それ以外のCSSは読み込み順序に依存してはいけない
@@ -42,7 +42,7 @@ CSSの読み込みについては次の点に注意する
 
 - 各コンポーネントは `component/分類/<ComponentName>/<ComponentName>.css` のように配置する
     - `ComponentName` は大文字開始のキャメルケール
-    - `<ComponentName>.css`にはそのコンポーネントと子コンポーネント(`<ComponentName>-<childName>`)を含んで良い
+    - `<ComponentName>.css`にはそのコンポーネントと子コンポーネント(`<ComponentName>-<childName>`)を含んでよい
     - 対となるJavaScript(React)に書かれていないクラスはできるだけ扱わない(コンポーネント間の独立性を保つ)
 - 各コンポーネントのStateは `分類/<ComponentName>/<ComponentName>.is-<stateName>.css` のように配置する
     - StateごとにCSSファイルを分ける
@@ -66,15 +66,15 @@ CSSの読み込みについては次の点に注意する
 ```
 
 
-ただしSUIT CSSのライブラリなどはそのまま使わなくても良い
+ただしSUIT CSSのライブラリなどはそのまま使わなくてもよい。
 
 - コンポーネント(Container/Project/ui-kit)はそのコンポーネントより上の要素/クラスのスタイルを扱わない
 - 上の要素が下の要素のスタイルを扱うのは許容されるが、避けられる場合は避けるようにする
   - 例) containerコンポーネントがprojectコンポーネントに対して `width` を設定する
 
-例) MyComponent
+例) MyComponent。
 
-`MyComponent/MyComponent.js` というコンポーネントがあった場合に
+`MyComponent/MyComponent.js` というコンポーネントがあった場合に。
 
 ```js
 import React from "react";
@@ -87,7 +87,7 @@ export default class MyComponent extends React.Component {
 }
 ```
 
-CSSは以下のような形で書く
+CSSは次のような形で書く。
 
 `MyComponent/MyComponent.css`:
 
@@ -100,7 +100,7 @@ CSSは以下のような形で書く
 
 ### Stateクラス
 
-MyComponentにstateがある場合は、SUIT CSSの規約に基づき `is-*` というクラスが追加される。
+MyComponentにstateがある場合は、SUIT CSSの規約にもとづき `is-*` というクラスが追加される。
 
 次の例は`is-active`というstateが追加されているコンポーネントを示したもの。
 
@@ -112,7 +112,7 @@ MyComponentにstateがある場合は、SUIT CSSの規約に基づき `is-*` と
 
 この`is-active` stateに対するCSSは、`MyComponent/MyComponent.css`とは別ファイルとして作成する。
 
-`コンポーネント名.is-ステート名.css` という命名規則で作成し、stateに関するCSSのみを記述する
+`コンポーネント名.is-ステート名.css` という命名規則で作成し、stateに関するCSSのみを記述する。
 
 `MyComponent/MyComponent.is-active.css`:
 
@@ -133,11 +133,11 @@ stateを別ファイルにすることで、
 
 ## Container ComponentのCSS
 
-- ContainerはProject Componentを使うため、Containerから見たProjectのスタイルを当てても良い
-- ある XContainerにある YProjectComponentの `width`や`height`などをレイアウトを指定してもよい
+- ContainerはProject Componentを使うため、Containerから見たProjectのスタイルを当ててもよい
+- あるXContainerにあるYProjectComponentの `width`や`height`などをレイアウトを指定してもよい
 
-つまり、以下のようにある`.Container`の下の`.ProjectComponent`というスタイルを、
-`Container.css`に書いても良い。
+つまり、次のようにある`.Container`の下の`.ProjectComponent`というスタイルを、
+`Container.css`に書いてもよい。
 
 ```css
 .Container .ProjectComponent {
@@ -146,7 +146,7 @@ stateを別ファイルにすることで、
 ```
 
 CSSの詳細度や[SUIT CSS](http://suitcss.github.io/ "SUIT CSS")の規約を考えると、
-以下のようにProject Componentは外から`className`を受け取れるようにするとより良い。
+次のようにProject Componentは外から`className`を受け取れるようにするとよりよい。
 
 `MyComponent`:
 ```jsx
@@ -193,9 +193,9 @@ PostCSSを使い、CSS Custom Property(`--variable: <値>;`)を変数として�
 CSS Custom Propertyの仕様的には、変数の上書きはできるが読み込み順序に依存するため、
 基本的に変数は再定義しないでグローバルな定数として扱う。
 
-そのため、各コンポーネントに変数を宣言するのではなく、`src/css/`以下に宣言してコンポーネントではそれを利用する。
+そのため、各コンポーネントに変数を宣言するのではなく、`src/css/`次に宣言してコンポーネントではそれを利用する。
 
-CSS Custom Propertyの仕様は下記を参照する
+CSS Custom Propertyの仕様は下記を参照する。
 
 - [CSS Custom Properties for Cascading Variables Module Level 1](https://drafts.csswg.org/css-variables/ "CSS Custom Properties for Cascading Variables Module Level 1")
 - [CSS カスケード変数のためのカスタムプロパティ — CSS Custom Properties for Cascading Variables Module Level 1 （日本語訳）](http://www.hcn.zaq.ne.jp/___/WEB/css-variables-ja.html "CSS カスケード変数のためのカスタムプロパティ — CSS Custom Properties for Cascading Variables Module Level 1 （日本語訳）")

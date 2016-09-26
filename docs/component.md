@@ -8,7 +8,7 @@
 - コンポーネントディレクトリには、コンポーネントと同名のJSとCSSファイルが存在する
 - コンポーネントを削除した場合に、同名のCSSファイルを削除しても問題ない状態にする
 
-例) MyButton というコンポーネントのディレクトリ構造
+例) MyButtonというコンポーネントのディレクトリ構造。
 
 ```
 MyButton
@@ -19,17 +19,17 @@ MyButton
 ## 分類
 
 - container/
-    - project コンポーネントを使ってページをレイアウトするコンポーネント
-    - UseCase に依存し、ユーザーアクションのハンドラ定義を行う
+    - projectコンポーネントを使ってページをレイアウトするコンポーネント
+    - UseCaseに依存し、ユーザーアクションのハンドラ定義を行う
     - Stateオブジェクトを扱うことができるコンポーネント
     - containerは階層的なディレクトリ構造となり、DOM構造をディレクトリとして表現する
-    - containerにおいてはReact Context経由で値を受け取って良い
+    - containerにおいてはReact Context経由で値を受け取ってよい
 - project/
     - プロジェクト固有のUI
     - projectコンポーネントは並列的なディレクトリ構造となっている
     - Stateオブジェクトではなくできるだけプリミティブな値に分解し `props` で受け取る
     - ユーザーアクションのハンドラは定義せず、Containerから受け取る
-    - project コンポーネントの中で完結するハンドラは定義して利用して良い
+    - projectコンポーネントの中で完結するハンドラは定義して利用してよい
 - ui-kit/
     - UIを抽象化したもの
     - projectがuiを継承したプロジェクト固有UIを実装する
@@ -53,7 +53,7 @@ export default class BookmarkButton extends React.Component {
 }
 ```
 
-この時 `BookmarkButton` の`class`属性値は `class="ActionButton BookmarkButton"` となる。
+このとき `BookmarkButton` の`class`属性値は `class="ActionButton BookmarkButton"` となる。
 
 - `ActionButton` 共通のスタイルは `ui-kit/ActionButton.css` へ
 - `BookmarkButton` 固有のスタイルは `components/BookmarkButton.cs` へ
@@ -67,7 +67,7 @@ export default class BookmarkButton extends React.Component {
 }
 ```
 
-と
+と。
 
 ```css
 .BookmarkButton {
@@ -119,7 +119,7 @@ const className = suitClassNames({
 // "ComponentName ComponentName.is-active" が作成される
 ```
 
-この時、`states`のキーには`is-`を省略しないようにする。(CSSのクラス名に合わせたstateのキーを書く)
+このとき、`states`のキーには`is-`を省略しないようにする。(CSSのクラス名に合わせたstateのキーを書く)
 
 > "States's property key name(isState) should start with is-*"
 

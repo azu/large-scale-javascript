@@ -5,7 +5,7 @@
 
 ## アプリの初期化フロー
 
-以下は大まかなAppの 初期化から表示の更新 におけるフローです。
+以下は大まかなAppの初期化から表示の更新におけるフローです。
 
 1. Mount
 1. Initialize domain
@@ -26,30 +26,30 @@ View -> UseCase -> State -> View -> ...
 Stateのみに存在する情報を更新したいときに、`dispatch`による更新を行う。
 ## 各クラスの概要
 ### View(Component)
-ユーザーアクションやポーリングなどにより UseCase を生成し実行する。  
-UseCase 実行時に必要なデータを渡す。
+ユーザーアクションやポーリングなどによりUseCaseを生成し実行する。  
+UseCase実行時に必要なデータを渡す。
 
 Component内にも役割の階層があるため、詳細は[Component](./component.md)を参照。
 
 ### UseCase
-受け取ったデータを用いて、entity の生成、変更を行い、結果を Repository に保存する。  
-もしくは、受け取ったデータを必要に応じて加工し、State へ向けたイベントを発する。
+受け取ったデータを用いて、entityの生成、変更を行い、結果をRepositoryに保存する。  
+もしくは、受け取ったデータを必要に応じて加工し、Stateへ向けたイベントを発する。
 
 ### Domain
 生成されたり、変更される対象。  
-扱われるデータのひとつなので、Domain が他クラスにデータを渡すことはない。
+扱われるデータのひとつなので、Domainが他クラスにデータを渡すことはない。
 
 ### Repository
 永続化周りの処理を担当。  
-データの保存が行われた際に、State へ向けたイベントを発する。
+データの保存が行われた際に、Stateへ向けたイベントを発する。
 
 ### State
 生成されたり、変更される対象。  
-View を意識したデータを持ち、UseCase のイベントの処理を行う。
+Viewを意識したデータを持ち、UseCaseのイベントの処理を行う。
 
 ### Store
-UseCase と Repository のイベントを監視し、State の生成、変更を行う。  
-State の更新がある場合は、View に向けたイベントを発する。
+UseCaseとRepositoryのイベントを監視し、Stateの生成、変更を行う。  
+Stateの更新がある場合は、Viewに向けたイベントを発する。
 
 
 # 実装フロー例
@@ -59,16 +59,16 @@ State の更新がある場合は、View に向けたイベントを発する。
 
 ### Component の用意
 
-- component/project 下に HogeButton.js を追加する。  
-- component/container 下から、HogeButton を利用したい container を選び、HogeButton 利用する。  
+- component/project下にHogeButton.jsを追加する。  
+- component/container下から、HogeButtonを利用したいcontainerを選び、HogeButton利用する。  
 
 詳細は [ComponentのREADME](./component.md) を参照して下さい。
 
 ### UseCase の追加や利用
-既に HogeButton を利用した際の UseCase がある場合は、container 内で HogeButton のハンドラを定義し、HogeButton へ渡す。
-※ project 下では UseCase に依存させないため、container でハンドラを定義する。
+すでにHogeButtonを利用した際のUseCaseがある場合は、container内でHogeButtonのハンドラを定義し、HogeButtonへ渡す。
+※ project下ではUseCaseに依存させないため、containerでハンドラを定義する。
 
-UseCase がない場合は新規に作成し、それを利用する。
+UseCaseがない場合は新規に作成し、それを利用する。
 (詳細は [UseCase の README](./use-case.md) を参照して下さい。)
 
 ### Domain の関数/プロパティの追加や変更
@@ -77,8 +77,8 @@ UseCase がない場合は新規に作成し、それを利用する。
 (詳細は [Domain の README](./domain.md) を参照して下さい。)
 
 ### State の変更
-Domain の変更により、Component にも新たに情報を渡す必要がある場合は、対応する State のプロパティを追加したり、getter 関数を修正したりする。
+Domainの変更により、Componentにも新たに情報を渡す必要がある場合は、対応するStateのプロパティを追加したり、getter関数を修正したりする。
 (詳細は [State の README](./store.md) を参照して下さい。)
 
 ### Component の変更
-State の変更により、表示内容に変更がある場合は、props の追加や、処理の変更を行う。
+Stateの変更により、表示内容に変更がある場合は、propsの追加や、処理の変更を行う。
