@@ -392,14 +392,17 @@ BEMなども同じような仕組みを持っている。
 Flux的なフローだと一周回してから反映するため、常に非同期に回す設計だとこの問題への対処が難しい。
 そのため、同期的に一周回せるルートを用意しておくと、このような例外的なケースも同じ一方通行のデータフローで書けるはず。
 
-## Stateは新しいか今のままか
+## Stateは更新されたら新しいオブジェクトにする
 
 StateはImmutableである方がよい。
+Reactの`shouldComponentUpdate`を信用して、shallowEqualで更新判定ができるように作っていたほうがいい。
+
+パフォーマンスは更新判定をちゃんとやれば問題なく、StateのMutableに扱うとバグの原因なりやすいため。
 
 ## StateはViewのため型
 
 - StateContainerが受け取る
-- こうすることでpropTypesがinstanceofのチェックだけでよくなる
+- こうすることでpropTypesが`React.propTypes.instanceOf`のチェックだけでよくなる
 
 ```js
 import ViewState from "../path/to/store/ViewState";
