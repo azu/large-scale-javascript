@@ -188,3 +188,8 @@ via [http://twilog.org/azu_re/date-160519](http://twilog.org/azu_re/date-160519)
 > [Large-scale JavaScript Application Architecture // Speaker Deck](https://speakerdeck.com/addyosmani/large-scale-javascript-application-architecture)
 
 このリポジトリのタイトルの元ネタ。
+
+## amebafresh.tv
+
+公開初期はSourceMapによるソースコードが読めたので参考になった。
+[コンポーネント](./docs/component.md)の`project/`ディレクトリの元ネタ。
