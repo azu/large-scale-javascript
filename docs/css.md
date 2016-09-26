@@ -72,7 +72,7 @@ CSSの読み込みについては次の点に注意する。
 - 上の要素が下の要素のスタイルを扱うのは許容されるが、避けられる場合は避けるようにする
   - 例) containerコンポーネントがprojectコンポーネントに対して `width` を設定する
 
-例) MyComponent。
+例) MyComponentのケース。
 
 `MyComponent/MyComponent.js` というコンポーネントがあった場合に。
 

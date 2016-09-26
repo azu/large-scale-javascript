@@ -30,7 +30,9 @@ execute関数では、非同期ならPromiseを返す、そうでないなら何
 ```
 動詞 + 名詞(対象) + UseCase
 ```
-例。
+
+命名例は次の通り。
+
 ```
 ChangeTitleUseCase
 EnterFullScreenUseCase
