@@ -1,4 +1,4 @@
-# 参考
+# 参考資料
 
 並び順は適当だけど、後ろに行くほど少し分野違いや読むのが難しい系統。
 
@@ -176,10 +176,15 @@ IAの話もそうだけど、構造化の考え方などは都市構造の考え
 > パターンランゲージは言葉で形を表すので、それは誰に取っても同じ形にならないとおかしい  
 > 真偽値を科学的なものじゃない、コードとかにも「良い悪い」という適用したのがパターンの面白いところ  
 
-- http://twilog.org/azu_re/date-160519
+via [http://twilog.org/azu_re/date-160519](http://twilog.org/azu_re/date-160519)
 
 ## [アルゴリズミック・デザインの現在](http://www.ieice.org/cs/csbn/program/papers/080516_waseda.pdf "untitled - 080516_waseda.pdf")
 
 パターン・ランゲージのアレグザンダーは1970年代にはコンピュータによるデザイン設計を試みてたという話があった。
 建築的にはアルゴリズミック・デザインの源流となる考え方で、それを調べてた。
 また1970年代ではまだコンピュータの性能などもあって諦めた部分があって、それの代わりにパターンの流れがあった。
+
+## [Patterns For Large-Scale JavaScript Application Architecture](https://addyosmani.com/largescalejavascript/)
+> [Large-scale JavaScript Application Architecture // Speaker Deck](https://speakerdeck.com/addyosmani/large-scale-javascript-application-architecture)
+
+このリポジトリのタイトルの元ネタ。

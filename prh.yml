@@ -1,5 +1,8 @@
 version: 1
 rules:
+  # project
+  - expected: Almin
+    patterns: /almin.js/i
   # 開き
   - expected: もとづ$1
     patterns: /基づ(く|き)/

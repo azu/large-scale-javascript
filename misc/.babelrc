@@ -1,0 +1,38 @@
+{
+  "presets": [
+    "es2015",
+    "react"
+  ],
+  "plugins": [
+    // transform-builtin-extend
+    [
+      "transform-builtin-extend",
+      {
+        "globals": [
+          "Error",
+          "Array"
+        ]
+      }
+    ],
+    "transform-class-properties"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        // https://github.com/azu/babel-preset-jsdoc-to-assert
+        "jsdoc-to-assert",
+        // https://github.com/azu/babel-preset-jsdoc-to-assert
+        "power-assert"
+      ],
+      "plugins": [
+        "transform-runtime"
+      ]
+    },
+    "development": {
+      "presets": [
+        "power-assert",
+        "jsdoc-to-assert"
+      ]
+    }
+  }
+}

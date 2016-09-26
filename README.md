@@ -1,16 +1,60 @@
 # 複雑なJavaScriptアプリケーションを作るために考えること
 > Patterns For Large-Scale JavaScript Application Architecture
 
-## 構成
+クライアントサイドJavaScriptで複雑なアプリケーションを作るにおける議論した内容をまとめたものです。
+[同名のスライド](http://azu.github.io/slide/2016/react-meetup/large-scale-javascript.html)をベースに、実際のものに近い開発ガイドや雑多な内容を追加しています。
+
+作成するアプリケーションによって必要な構造は異なるため、この構成がよいということを主張するものではありませんが、
+何か参考になるものがあれば幸いです。
+
+Written by @[azu](https://github.com/azu "azu").
+
+## 目的
+
+- 難しいものを簡単に作れないため、難しいものは考えて作るしかない
+- 考えて作るためには、議論できる言語化されたもの(コード)が必要
+    - 長期的にメンテナンスするならこの傾向はより必要
+- ルールは明確に、でも最初から明確なワケではない
+- 議論できるベースをどのように作っていくかについて
+
+## 140文字でOK
+
+140文字しか表示されない環境向けのサマリです。
+
+> JavaScriptで複雑なアプリケーションを作る構成と実践ガイド。
+> ドメインモデルをどのように考えて作っていくかについて。
+> Babel、React、Almin、PostCSSがベース。
+
+## 複雑なものってどんなもの？
+
+ここでは、ライブラリ抜きで数万LOC([lines of code](https://ja.wikipedia.org/wiki/LOC "lines of code"))以上ぐらいを目安に考えている。
+
+## 基本構成
 
 - [Babel](http://babeljs.io/ "Babel")
+    - [.babelrcの設定例](./misc/.babelrc)
 - [React](https://facebook.github.io/react/ "React")
-- [Almin.js](https://github.com/almin/almin "Almin.js")
+- [Almin](https://github.com/almin/almin "Almin")
 - [PostCSS](https://github.com/postcss/postcss "PostCSS")
+    - [PostCSSの設定例](./misc/postcss.config.js)
 
-## ドキュメント
+## アーキテクチャ解説
 
-具体的なコーディングルールなどのドキュメントは次を読む。
+- [Almin.js | JavaScriptアーキテクチャ](http://azu.github.io/slide/2016/child_process_sushi/almin-javascript-architecture.html "Almin.js | JavaScriptアーキテクチャ")
+    - [Almin](https://github.com/almin/almin "Almin")をどのように考えて実装していったかのスライド
+    - 構造化の考え方などについて
+- [複雑なJavaScriptアプリケーションを考えながら作る話](http://azu.github.io/slide/2016/react-meetup/large-scale-javascript.html "複雑なJavaScriptアプリケーションを考えながら作る話")
+    - Fluxに慣れている人向けのスライド
+    - Fluxでドメインモデルを扱うにあたりどこが曖昧に感じるかという点をベースにしている
+    - CQRSを参考に[Almin](https://github.com/almin/almin "Almin")を実装するまでの話
+    - どのような設計思想で作られているかについて
+- [参考資料](./refs.md)
+    - その他の参考資料まとめ
+    - 書籍や記事、スライドなど
+
+## 開発ガイド
+
+具体的なコーディングルールなどの開発ガイドのドキュメントは次を読む。
 
 - [docs](./docs) - 目次や全体像について
     - [css.md](./docs/css.md)
@@ -19,8 +63,13 @@
     - [infra.md](./docs/infra.md)
     - [store.md](./docs/store.md)
     - [use-case.md](./docs/use-case.md)
-- [参考資料](./refs.md)
-    - アーキテクチャを考えるときの参考資料
+
+## 実装例
+
+- [azu/presentation-annotator](https://github.com/azu/presentation-annotator "azu/presentation-annotator: viewing presentation and annotate.")
+    - 開発ガイドをできるだけ適応した参考実装
+
+-----
 
 以下は雑多なポエムです。
 
@@ -28,24 +77,9 @@
 
 Inspired by [https://github.com/tokuhirom/java-handbook](https://github.com/tokuhirom/java-handbook)
 
-## 目標
-
-- 難しいものを簡単につくれる方法を探すのではなく、難しいものは難しく作るしかない
-- 考えて作っていくためには、議論できる言語化されたもの(コード)が必要
-- ルールは明確に、でも最初から明確なワケではない
-
-## 140文字でOK
-
-難しいものを簡単に作ることはできないため、難しく作る。
-難しいものを考えずに作ることは、ほころびを生み壊れやすくなる。
-
-## 複雑なものってどんなもの？
-
-ここでは、ライブラリ抜きで1万LOC以上ぐらいを目安に考えてる。
-
 ## 無理なく理解
 
-[Almin.js](https://github.com/almin/almin "Almin.js")はできるだけクラスで書けるようにした。
+[Almin](https://github.com/almin/almin "Almin")はできるだけクラスで書けるようにした。
 色々な言語のバックグラウンドをもつ人にとってクラスで書けたほうが直感的に理解ができるため。
 
 Reduxのように関数を主軸した方が柔軟性やImmutabilityとの相性がいい。
@@ -213,7 +247,7 @@ optionalだと型が違った場合にエラーがでないので、typoもエ�
 
 ### React Contextのルール
 
-たとえば、React ContextはContainer Componentのみが使えるというルールにしている。
+たとえば、React ContextはContainer Componentのみが使えるというルールにしている。([component.md](./docs/component.md)を参照)
 このルールを知らない人は、Project componentでもContextを使った方が楽なので使ってしまう。
 
 そのため、[eslint-plugin-no-allow-react-context](https://github.com/azu/eslint-plugin-no-allow-react-context "eslint-plugin-no-allow-react-context")というESLintのルールを書いて、Contextを使える場所を限定している。
@@ -271,6 +305,12 @@ ESLintなどのプラグインを書けば、静的にチェックできる部�
 
 - [フロントエンド<チーム開発 />成功の裏話 - の裏話](http://tech.dcube.io/2016/08/frontend-team-development.html)
 - [文書執筆の指南書で解説されている問題点を RedPen で発見する - Qiita](http://qiita.com/takahi-i/items/a8b994ef17fd66fe6237)
+
+JavaScriptは[ESLint](http://eslint.org/ "ESLint")、CSSは[stylelint](http://stylelint.io/ "stylelint")で簡単に独自のルールが作れる。
+機械的にチェックできることを発見したらルールを書いてみると、その利益を受け取れる人は複数人いるため効果が分かりやすい。
+
+> 一人が頑張れば受益者が多いという構図は物事を良い方向に向かわせる起爆剤にはなるので、違いを意識しておくと良いと思います。
+> -- [@t_wada](https://twitter.com/t_wada/status/688303653300486144)
 
 ## CoCはできるだけ減らす
 
@@ -399,7 +439,7 @@ UIがあるならステートレスなコンポーネントとしてUIから作�
 
 ## サーバに習う
 
-[Almin.js](https://github.com/almin/almin "Almin.js")とReactを使ったアーキテクチャは、
+[Almin](https://github.com/almin/almin "Almin")とReactを使ったアーキテクチャは、
 サーバ側のようなデータフローを行えるようになってる。
 なので、「この場合はどうするのがいいんだろ？」というときにサーバ側ではどうやってるかを考えるのも参考になる。
 

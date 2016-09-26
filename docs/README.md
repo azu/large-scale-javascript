@@ -1,17 +1,18 @@
 # データの流れ
 ## 概略図
 
-- [ ] 図
+![概略図](./img/workflow.png)
 
 ## アプリの初期化フロー
 
 以下は大まかなAppの初期化から表示の更新におけるフローです。
 
-1. Mount
-1. Initialize domain
-1. Routing
-1. Update State 
-1. Update View
+1. Initialize domain(ドメインの初期化、Repositoryへの保存、データベースの初期化)
+1. AppContainer(Rootとなるコンポーネント) Mount
+1. 初期表示
+1. Routing(Routerコンポーネントでのルーティング)
+    1. Update State 
+    1. Update View
 
 これ以降は、[use-case](./use-case.md)を使い、[domain](./domain.md)や[store](./store.md)を更新する。
 AppContainerはstoreの変更を監視しているため、stateが変更される度にViewを更新するのが基本的な表示の更新フローです。
@@ -82,3 +83,4 @@ Domainの変更を受けてStateのプロパティの変更、getter関数を修
 
 ### Component の変更
 Stateの変更により、表示内容に変更がある場合は、propsの追加や処理の変更を行う。
+
