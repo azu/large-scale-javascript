@@ -2,6 +2,7 @@
 > Patterns For Large-Scale JavaScript Application Architecture
 
 クライアントサイドJavaScriptで複雑なアプリケーションを作るにおける議論した内容をまとめたものです。
+
 [同名のスライド](http://azu.github.io/slide/2016/react-meetup/large-scale-javascript.html)をベースに、実際のものに近い開発ガイドや雑多な内容を追加しています。
 
 作成するアプリケーションによって必要な構造は異なるため、この構成がよいということを主張するものではありませんが、
