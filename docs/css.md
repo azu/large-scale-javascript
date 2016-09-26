@@ -197,8 +197,13 @@ CSS Custom Propertyの仕様的には、変数の上書きはできるが読み�
 
 CSS Custom Propertyの仕様は下記を参照する。
 
+<!-- textlint-disable preset-ja-technical-writing/sentence-length -->
+
 - [CSS Custom Properties for Cascading Variables Module Level 1](https://drafts.csswg.org/css-variables/ "CSS Custom Properties for Cascading Variables Module Level 1")
 - [CSS カスケード変数のためのカスタムプロパティ — CSS Custom Properties for Cascading Variables Module Level 1 （日本語訳）](http://www.hcn.zaq.ne.jp/___/WEB/css-variables-ja.html "CSS カスケード変数のためのカスタムプロパティ — CSS Custom Properties for Cascading Variables Module Level 1 （日本語訳）")
+
+<!-- textlint-enable preset-ja-technical-writing/sentence-length -->
+
 
 ### 変数の名前
 

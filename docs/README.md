@@ -77,8 +77,8 @@ UseCaseがない場合は新規に作成し、それを利用する。
 (詳細は [Domain の README](./domain.md) を参照して下さい。)
 
 ### State の変更
-Domainの変更により、Componentにも新たに情報を渡す必要がある場合は、対応するStateのプロパティを追加したり、getter関数を修正したりする。
+Domainの変更を受けてStateのプロパティの変更、getter関数を修正したりする。
 (詳細は [State の README](./store.md) を参照して下さい。)
 
 ### Component の変更
-Stateの変更により、表示内容に変更がある場合は、propsの追加や、処理の変更を行う。
+Stateの変更により、表示内容に変更がある場合は、propsの追加や処理の変更を行う。

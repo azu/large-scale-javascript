@@ -13,8 +13,10 @@ UseCaseのイベントに対する処理をもつ。
 
 ## 原則
 
-- Domainのentityが入れ子になっている場合などは、entityをそのまま利用してもよいし、Component用に変換が必要な場合は、単純なオブジェクトや、変換用のクラスを用意してもよい。
-- 理由としては、変更がある度に新規インスタンスを返す仕組みとイベント周りのつなぎ込みが複雑になりそうなためと、Domainの情報からStateは作れるはずなため。
+- Domainのentityが入れ子になっている場合などは、entityをそのまま利用してもよい。
+- Component用に変換が必要な場合は、単純なオブジェクトや、変換用のクラスを用意してもよい。
+
+理由としては、変更がある度に新規インスタンスを返す仕組みとイベント周りのつなぎ込みが複雑になりそうなためと、Domainの情報からStateは作れるはずなため。
 
 ## 作り方
 ### 命名規則
@@ -31,7 +33,7 @@ Componentを意識した形になるので、大きくなりすぎず、逆に�
 ### Component を意識したプロパティの作成
 たとえばComponentのHogeButtonを非表示にしたい場合は次のようにする。
 
-Containerに渡すHogeStateに`isHidden`のようなプロパティを追加する。
+Containerに渡すHogeStateへ`isHidden`のようなプロパティを追加する。
 
 ```js
 export default class HogeState {
@@ -47,9 +49,10 @@ export default class HogeState {
 <HogeButton hidden={hogeState.isHidden}/>
 ```
 
-HogeButtonComponent内では、hiddenの値を見てrenderメソッド内でnullを返したり、classNameにstate情報として出力し、cssから非表示にしたりなどする。
+HogeButtonComponent内では、hiddenの値を見てrenderの処理を行う。
 特別な理由がない場合は、メソッドを生やしてrender毎に動的に計算するよりかは、constructorで計算したものを定義しておいた方が負荷的に良さそう。
 (stateはStoreGroupによってキャッシュされる)
 
 ### State#equals メソッド
-StoreがUseCaseやRepositoryのイベントによってStateを生成し直した際に、内容に変更がないケースはありうる。変更がないことを判断するためにStateに自身のプロパティと比較するequalsメソッドを用意し、Storeでそれを利用する。
+StoreがUseCaseやRepositoryのイベントによってStateを生成し直した際に、内容に変更がないケースはありうる。
+変更がないことを判断するためにState自身のプロパティと比較するequalsメソッドを用意し、Storeでそれを利用する。

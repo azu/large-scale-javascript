@@ -5,9 +5,17 @@
   "rules": {
     "preset-ja-spacing": true,
     "preset-ja-technical-writing": {
+      "ja-no-weak-phrase": false,
+      "max-kanji-continuous-len": {
+        "allow": [
+          "依存関係逆転"
+        ]
+      },
       "no-exclamation-question-mark": {
         // allow to use ?
-        "allowHalfWidthQuestion": falseb
+        "allowFullWidthQuestion": true,
+        // allow to use ！
+        "allowFullWidthExclamation": true
       }
     },
     "prh": {

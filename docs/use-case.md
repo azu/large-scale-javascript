@@ -59,7 +59,7 @@ Store内で、Repository#onChangeにハンドラを渡すことで、Changeの�
 
 ### dispatch 関数
 execute内で、this.dispatchを叩くことで、UseCaseからイベントを発することができる。
-Store内で、Store#onDispatchにハンドラを渡すことで、UseCaseからのイベントとのつなぎ込みを行う。
+Store#onDispatchにハンドラを渡すことで、UseCaseからのイベントとのつなぎ込みを行う。
 dispatch関数の引数には次の様な形式のオブジェクトを渡す。
 
 ```js
