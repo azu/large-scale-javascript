@@ -1,5 +1,5 @@
 # 複雑なJavaScriptアプリケーションを作るために考えること
-> Patterns For Large-Scale JavaScript Application Architecture
+> Patterns For Large-Scale JavaScript Application Architecture [![Build Status](https://travis-ci.org/azu/large-scale-javascript.svg?branch=master)](https://travis-ci.org/azu/large-scale-javascript)
 
 クライアントサイドJavaScriptで複雑なアプリケーションを作るにおける議論した内容をまとめたものです。
 
