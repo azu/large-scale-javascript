@@ -73,7 +73,7 @@ Written by azu [![github][github]][@azu] [![twitter][twitter]][@azu_re]
 ## 実装例
 
 - [azu/presentation-annotator](https://github.com/azu/presentation-annotator "azu/presentation-annotator: viewing presentation and annotate.")
-    - 開発ガイドをできるだけ適応した参考実装
+    - 開発ガイドをできるだけ適用した参考実装
 
 ## 意見や疑問点
 
