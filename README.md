@@ -75,6 +75,12 @@ Written by azu [![github][github]][@azu] [![twitter][twitter]][@azu_re]
 - [azu/presentation-annotator](https://github.com/azu/presentation-annotator "azu/presentation-annotator: viewing presentation and annotate.")
     - 開発ガイドをできるだけ適応した参考実装
 
+## 意見や疑問点
+
+Create [New Issue](https://github.com/azu/large-scale-javascript/issues/new).
+
+Issue作ってそこに書くか、[Twitter][@azu_re]とか適当に聞いてください。
+
 -----
 
 以下は雑多なポエムです。
