@@ -362,7 +362,7 @@ unassertを使えばproduction時に外すことが可能なので、開発中�
 特にCSSでは例外が出てきやすい。
 そのため、原則が守れないと崩壊してしまうルールよりは、例外を規定することで原則を守れるルールの方がよい。
 
-## 詳細度は一定にする
+## CSSの詳細度は一定にする
 
 [SUIT CSS](http://suitcss.github.io/ "SUIT CSS")などのルールを使っているのは、詳細度を一定にするためという面が多い。
 詳細度を考えてCSSを書くのはとてもむずかしいので、普通に書いたら普通になるという状態を目指しておきたい。
@@ -412,7 +412,7 @@ Reactの`shouldComponentUpdate`を信用して、shallowEqualで更新判定が�
 
 ## StateはViewのため型
 
-- StateContainerが受け取る
+- Container Componentが受け取る
 - こうすることでpropTypesが`React.propTypes.instanceOf`のチェックだけでよくなる
 
 ```js
