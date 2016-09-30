@@ -57,6 +57,7 @@ Written by azu [![github][github]][@azu] [![twitter][twitter]][@azu_re]
 - [参考資料](./refs.md)
     - その他の参考資料まとめ
     - 書籍や記事、スライドなど
+    - [アーキテクチャをめぐるたび | Web Scratch](http://efcl.info/2016/09/30/architecture-refs/ "アーキテクチャをめぐるたび | Web Scratch") 別視点でのまとめ
 
 ## 開発ガイド
 
