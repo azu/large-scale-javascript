@@ -343,6 +343,10 @@ class CustomError extends Error {
 
 - https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend
 
+ここでいうツールで解決した方がいいことは、せっかく標準化されていること対して現状では問題がおきた場合の話。
+そのときに微妙な回避方法を取るよりは、ツール側で頑張ってみるということ。
+(webpackでCSSもrequireしましょうとかではない)
+
 ## `assert`は外せるので積極的に入れる
 
 Node.jaの`assert`は積極的使っていきたい。
