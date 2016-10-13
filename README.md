@@ -431,6 +431,10 @@ export default class ContainerComponent extends React.Component {
 }
 ```
 
+AlminだとこのStateクラスをパターン化した[almin-reduce-store](https://github.com/almin/almin-reduce-store "almin-reduce-store")というライブラリがあります。
+
+- [almin/almin-reduce-store: Almin's reduce store library.](https://github.com/almin/almin-reduce-store "almin/almin-reduce-store: Almin&#39;s reduce store library.")
+
 ## Container Component
 
 Project Componentやui-kitを使ってページをレイアウトするコンポーネント。
