@@ -1,0 +1,8 @@
+# 口語を禁止するルール
+version: 1
+rules:
+  - expected: どのような
+    patterns: /どういう(?!こと)/
+    specs:
+      - from: どういうものがthenableなのか
+        to:   どのようなものがthenableなのか

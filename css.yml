@@ -1,0 +1,14 @@
+# CSS関連の用語
+version: 1
+rules:
+  # CSSのFlexbox
+  # LinuxにFluxboxというのもあるが…
+  - expected: Flexbox
+    patterns: Fluxbox
+    options:
+      wordBoundary: true
+    specs:
+      - from: CSS Fluxboxでは
+        to  : CSS Flexboxでは
+
+  - expected: PostCSS

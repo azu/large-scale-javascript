@@ -1,0 +1,20 @@
+# Other
+version: 1
+rules:
+  - expected: Leanpub
+  # O'reilly
+  - expected: Oreilly
+    prh: O'reilly is OK. But oreilly is not OK
+  - expected: Sauce Labs
+    patterns:
+      - SauceLabs
+  - expected: Travis CI
+    patterns:
+      - /TravisCI/i
+  - expected: HTML5 Rocks
+    patterns:
+      - /HTML5Rocks/i
+      - /HTML5Rock/i
+    specs:
+      - from: HTML5Rockに現在公開されている翻訳記事のまとめ
+        to  : HTML5 Rocksに現在公開されている翻訳記事のまとめ

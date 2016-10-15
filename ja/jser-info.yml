@@ -1,0 +1,30 @@
+# JSer.info 特有の表現統一なので少し厳し目に
+version: 1
+rules:
+  - expected: $1発売
+    pattern: /(\d+年\d+月\d+日)\s発売/
+
+  - expected: $1デフォルトで有効$2
+    pattern: /(?:(が)デフォルト有効)|(?:デフォルト有効(に))/
+
+  # 用になっている=>ようになっている
+  - expected: ように$1
+    pattern: /用に(な)/
+
+  - expected: などが追加
+    pattern: など追加
+    specs:
+      - from: Class expressionやGeneratorのサポートなど追加されています。
+        to:   Class expressionやGeneratorのサポートなどが追加されています。
+
+  # 大抵の場合は"を比較して"でいい気がする。
+  - expected: を比較して
+    patterns:
+      - の比較して
+
+  - expected: 新規開発を終了
+    patterns:
+      - 新規開発終了
+    specs:
+      - from: YUIは新規開発終了し、今後はYahoo内部向けの修正に留めるとの事。
+        to  : YUIは新規開発を終了し、今後はYahoo内部向けの修正に留めるとの事。

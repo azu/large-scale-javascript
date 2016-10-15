@@ -1,0 +1,147 @@
+version: 1
+rules:
+  # ECMAScript
+  - expected: ECMAScript $1
+    patterns:
+      - /ECMAScript([0-9]+)/
+      - /ECMA Script([0-9]+)/
+
+  - expected: Ecma標準
+    patterns: ECMA標準
+
+  - expected: ES.next
+    pattern:  ES next
+    options:
+      wordBoundary: true
+    specs:
+      - from: ES nextでは
+        to  : ES.nextでは
+
+  - expected: ES6 Classes
+    specs:
+      - from: ES6 classes
+        to:   ES6 Classes
+
+# Web Platform API
+  - expected: Web Components
+    patterns:
+      - WebComponents
+      - web components
+      - Web components
+    specs:
+      - from: WebComponentsについてのWeeklyメールマガジン
+        to:   Web ComponentsについてのWeeklyメールマガジン
+
+  - expected: localStorage
+    pattern: /\blocalstorage\b/
+
+  - expected: sessionStorage
+    pattern: /\bsession storage\b|\bsessionstorage\b/
+
+  - expected: HTML Imports
+    pattern: /\bHTML Import\b/
+
+  - expected: JavaScript
+    options:
+      wordBoundary: true
+    specs:
+      - from: javascript
+        to:   JavaScript
+
+  - expected: JavaScript
+    pattern: /\bJava Script\b/i
+    specs:
+      - from: java script
+        to:   JavaScript
+      - from: Java script
+        to:   JavaScript
+
+  - expected: Pointer Events
+    patterns:
+      - /pointer event/i
+      - /pointer events/i
+    specs:
+      - from: MSEdgeの対応、pointer eventなど対応、
+        to:   MSEdgeの対応、Pointer Eventsなど対応、
+      # CSSの方はpointer-eventsとする
+      - from: pointer-events
+        to:   pointer-events
+  - expected: Touch Events
+    patterns:
+      - /Touch Event/i
+      - /Touch Events/i
+    specs:
+      - from: Touch Event、Fullscreen APIなどのサポートなど
+        to:   Touch Events、Fullscreen APIなどのサポートなど
+  - expected: Web Audio API
+    patterns:
+      - /WebAudio API/i
+      - /Web AudioAPI/i
+      - /Web Audio API/i
+  # Service Workerの機能についての言及
+  # 仕様についてはService Workers、InterfaceについてはServiceWorker
+  - expected: Service Worker
+  # 仕様はTemplateStringsだが、一般的にはTemplate Stringsがよく使われる
+  # http://www.ecma-international.org/ecma-262/6.0/#sec-static-semantics-templatestrings
+  - expected: Template Strings
+    patterns:
+      - /Template Strings/i
+      - /TemplateStrings/i
+
+  # ★Backbone.js 42.0.0★
+  - expected: .js $1
+    pattern: /.js([.0-9]+)/
+  - expected: TodoMVC
+    prh: See http://todomvc.com/
+  # https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit
+  - expected: Source Map
+    pattern:
+      - /Source Map/i
+      - /SourceMap/i
+    specs:
+      - from: 多段SourceMapに対応
+        to  : 多段Source Mapに対応
+
+  - expected: Virtual DOM
+    pattern: /\bVirtualDOM\b|\bVirtualDom\b/
+  # Library
+  - expected: jQuery
+    pattern:
+      - /jquery(?!-)/i
+    specs:
+      - from: jquery
+        to  : jQuery
+      - from: jquery-ui
+        to  : jquery-ui
+  - expected: Browserify
+  - expected: Redux
+    pattern:
+      - /redux(?!-)/i
+    specs:
+      - from: redux
+        to  : Redux
+      - from: redux-react
+        to  : redux-react
+
+  - expected: Underscore.js
+  # AngularはAngularJS、AngularDartを包含する用語
+  - expected: Angular
+    options:
+      wordBoundary: true
+    specs:
+    # wordBoundaryなので扱うのはAngularのみ
+      - from: angularJS
+        to  : angularJS
+      - from: angular
+        to  : Angular
+  - expected: AngularJS
+    patterns:
+      - /Angular\.js/i
+      - /angularjs/i
+    specs:
+      - from: Angular.js
+        to  : AngularJS
+  - expected: Ember.js
+  - expected: Ember.js
+    patterns:
+      - EmberJS
