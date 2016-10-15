@@ -191,5 +191,5 @@ via [http://twilog.org/azu_re/date-160519](http://twilog.org/azu_re/date-160519)
 
 ## amebafresh.tv
 
-公開初期はSourceMapによるソースコードが読めたので参考になった。
+公開初期はSource Mapによるソースコードが読めたので参考になった。
 [コンポーネント](./docs/component.md)の`project/`ディレクトリの元ネタ。
