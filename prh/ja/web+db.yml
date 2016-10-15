@@ -1,0 +1,1608 @@
+# WEB+DB PRESS用語統一ファイルをよりゆるやかにした辞書
+# 削除: 他のルールと衝突しやすいもの、組版向け記号、全角記号に関するもの
+# WEB+DB PRESS用語統一ルール( https://gist.github.com/inao/f55e8232e150aee918b9 )に沿ったものを使いたい場合は以下のルールを使用してください
+# https://github.com/azu/textlint-rule-web-plus-db
+
+version: 1
+rules:
+  - expected: Cookie
+    pattern: /クッキー|\bCOOKIE\b|\bcookie\b/
+
+  - expected: WebSocket
+    pattern: /\bWeb Socket\b/
+
+  - expected: Web$1
+    pattern:
+      - /WEB([^(\+DB)])/
+    specs:
+      - from: WEBサイト
+        to  : Webサイト
+      - from: WEBでは
+        to  : Webでは
+      - from: これはWEB+DBなのでセーフ
+        to  : これはWEB+DBなのでセーフ
+
+  - expected: $1Web$2
+    pattern: /(?:([^\/])ウェッブ)|(?:ウェッブ([^\+]))/
+
+  - expected: O/Rマッ
+    pattern: /ORマッ|O-Rマッ/
+    specs:
+      - from: "ORマッパ"
+        to:   "O/Rマッパ"
+
+  - expected: O/Rマッパ
+    pattern: /O\/Rマッパー|\bORM\b/
+
+  - expected: アイデア
+    pattern: /アィディア|アイディア|アィディア|アィデア/
+
+  - expected: アスタリスク
+    pattern: アステリスク
+
+  - expected: アーキテクチャ
+    pattern: /アーキテクチャー|アーキティクチャ/
+
+  - expected: アクティビティ
+    pattern: /\bActivity\b|アクティビティー/
+
+  - expected: アダプタ
+    pattern: アダプター
+
+  - expected: アノテーション
+    pattern: アノーテーション
+
+  - expected: アプレット
+    pattern: /\bApplet\b/
+
+  - expected: アニメータ
+    pattern: アニメーター
+
+  - expected: アンダースコア
+    pattern: アンダーバー
+
+  - expected: インストーラ
+    pattern: インストーラー
+
+  - expected: インスパイア
+    pattern: インスパイヤ
+
+  - expected: インタプリタ
+    pattern: /インタープリタ|インタプリター|インタープリター/
+
+  - expected: インデックス
+    pattern: インデクス
+
+  - expected: インテント
+    pattern: /\bIntent\b/
+
+  - expected: ウィジェット
+    pattern: /\bWidget\b|\bwidget\b/
+
+  - expected: ウィルス
+    pattern: ウイルス
+
+  - expected: ウィンドウ
+    pattern: ウインドウ
+
+  # ハードウェア、ソフトウェアなど
+  - expected: ウェア
+    pattern: ウエア
+
+  - expected: エディタ
+    pattern: エディター
+
+  - expected: エミッタ
+    pattern: エミッター
+
+  - expected: エンコーダ
+    pattern: エンコーダー
+
+  - expected: デコーダ
+    pattern: デコーダー
+
+  - expected: エミュレータ
+    pattern: エミュレーター
+
+  - expected: エンティティ
+    pattern: /\bEntity\b|\bentity\b|エンティティー/
+
+  - expected: エントリ
+    pattern: エントリー
+
+  - expected: オプション
+    pattern: オブション
+
+  - expected: カウンタ
+    pattern: カウンター
+
+  - expected: ガベージ
+    pattern: /ガベージ・|ガーベジ|ガーベジ・|ガーベージ|ガーベージ・|ガーベッジ|ガーベッジ・/
+
+  - expected: カテゴリ
+    pattern: カテゴリー
+
+  - expected: キャラクタ
+    pattern: キャラクター
+
+  - expected: クエリ文字列
+    pattern: /\bQueryString\b|\bQuery String\b|クエリストリング|クエリーストリング/
+
+  - expected: クエリ
+    pattern: クエリー
+
+  - expected: クライアント／サーバ
+    pattern: /クライアント\/サーバ|クライアント\/サーバー|クライアント・サーバ|クライアント・サーバー|クライアントサーバ|クライアントサーバー/
+
+  - expected: クラスタ
+    pattern: クラスター
+
+  - expected: グラウンド
+    pattern: グランド
+
+  - expected: クロージャ
+    pattern: クロージャー
+
+  - expected: クローラ
+    pattern: クローラー
+
+  - expected: ゲッタ
+    pattern: ゲッター
+
+  - expected: コピー&ペースト
+    pattern: /コピー＆ペースト|コピペ|コピーアンドペースト/
+
+  - expected: コミッタ
+    pattern: コミッター
+
+  - expected: コミュニ
+    pattern: コミニュ
+
+  - expected: コンストラクタ
+    pattern: コンストラクター
+
+  - expected: コンテキスト
+    pattern: コンテクスト
+
+  - expected: コンテントプロバイダ
+    pattern: /\bContent provider\b/
+
+  - expected: コンテナ
+    pattern: コンテナー
+
+  - expected: コンピュータ
+    pattern: コンピューター
+
+  - expected: コントローラ
+    pattern: コントローラー
+
+  - expected: サーバ
+    pattern: サーバー
+
+  - expected: サーブレット
+    pattern: /\bServlet\b|\bSERVLET\b/
+
+  - expected: サーブレット/JSP
+    pattern: /サーブレット／JSP|サーブレット＆JSP|サーブレット&JSP/
+
+  - expected: ジェネレータ
+    pattern: ジェネレーター
+
+  - expected: ジェネレーティブ
+    pattern: ジェネレイティブ
+
+  - expected: ジョブズ
+    pattern: ジョブス
+
+  - expected: ジオタグ
+    pattern: /\bGeotag\b|\bgeotag\b/
+
+  - expected: シミュレー
+    pattern: シュミレー
+
+  - expected: スカラ
+    pattern: スカラー
+
+  - expected: スタンドアローン
+    pattern: スタンドアロン
+
+  - expected: ストアド
+    pattern: ストアード
+
+  - expected: ストレージ
+    pattern: /ストレッジ|ストレジ/
+
+  - expected: セキュリティ
+    pattern: セキュリティー
+
+  - expected: セッション
+    pattern: /\bsession\b|\bSession\b/
+
+  - expected: セッタ
+    pattern: セッター
+
+  - expected: セレクタ
+    pattern: セレクター
+
+  - expected: $1ソフトウェア
+    pattern: /([^経])ソフトウエア/
+
+  - expected: ダイアグラム
+    pattern: ダイヤグラム
+
+  - expected: タイムスタンプ
+    pattern: /\btimestamp\b|\bTimestamp\b/
+
+  - expected: ツイート
+    pattern: /\btweet\b|\bTweet\b|ツィート/
+
+  - expected: ツリーオブジェクト
+    pattern: ツリー・オブジェクト
+
+  - expected: ツリーエントリ
+    pattern: ツリー・エントリ
+
+  - expected: ディレクター
+    pattern: /ディレクタ(?!ー)/
+    specs:
+      - from: ディレクタ
+        to:   ディレクター
+      - from: ディレクター
+        to:   ディレクター
+
+  - expected: データサービス
+    pattern: /\bData Services\b/
+
+  - expected: データ同期
+    pattern: /\bData Sync\b/
+
+  - expected: チェイン
+    pattern: チェーン
+
+  - expected: ディスク
+    pattern: /\bDisk\b/
+
+  - expected: ディスパッチャ
+    pattern: ディスパッチャー
+
+  - expected: ディスプレイ
+    pattern: ディスプレー
+
+  - expected: ディレクトリ
+    pattern: ディレクトリー
+
+  - expected: テクノロジ
+    pattern: テクノロジー
+
+  - expected: デザイナ
+    pattern: デザイナー
+
+  - expected: デバッグ
+    pattern: デバック
+
+  - expected: デフォルト
+    pattern: /既定|ディフォルト|デフォールト/
+
+  # 英語的には正しくないかもだけど多くの場合はこっちに
+  - expected: デプロイ
+    pattern: デプロイメント
+
+  - expected: デベロッパ
+    pattern: /ディベロッパー|ディベロッパ|デベロッパー|ディヴェロッパ/
+
+  - expected: デリバリ
+    pattern: デリバリー
+
+  # 英語的には正しくないかもだけど多くの場合はこっちに
+  - expected: ドキュメント
+    pattern: ドキュメンテーション
+
+  - expected: ドライバ
+    pattern: ドライバー
+
+  - expected: ドラッグ&ドロップ
+    pattern: /ドラッグ・アンド・ドロップ|ドラッグアンドドロップ|ドラッグ＆ドロップ/
+
+  - expected: ハイパーリンク
+    pattern: ハイパー・リンク
+
+  - expected: パーサ
+    pattern: /パーサー|パーザー|パーザ/
+
+  - expected: パーマリンク
+    pattern: /\bPermalink\b|\bpermalink\b|\bpermanent link\b|パーマネントリンク/
+
+  - expected: バッファ
+    pattern: バッファー
+
+  - expected: $1パス
+    pattern: /([^\w\s])\bpath\b|([^\w\s])\bPath\b/
+
+  - expected: パターン
+    pattern: パタン
+
+  - expected: バラ
+    pattern: 薔薇
+
+  - expected: バラエティ
+    pattern: バラエティー
+
+  - expected: パラメータ
+    pattern: /パラメタ|パラメーター/
+
+  - expected: バランサ
+    pattern: バランサー
+
+  - expected: ハンドラ
+    pattern: ハンドラー
+
+  - expected: ヒット率
+    pattern: hit率
+
+  - expected: ファイラ
+    pattern: ファイラー
+
+  - expected: ファクトリ
+    pattern: ファクトリー
+
+  - expected: フィーチャーフォン
+    pattern: フィーチャフォン
+
+  # ★Webブラウザ★WEBブラウザー★
+  - expected: ブラウザ
+    pattern: /Webブラウザー?|WEBブラウザー?/
+
+  - expected: ブラウザ
+    pattern: ブラウザー
+
+  - expected: プライマリ
+    pattern: プライマリー
+
+  - expected: プラットフォーム
+    pattern: プラットホーム
+
+  - expected: プレフィックス
+    pattern: /プレフィクス|プリフィックス/
+
+  # ゲームを遊ぶ人などの場合
+  - expected: プレイヤー
+    pattern: プレーヤ
+
+  # CDプレーヤなどの場合
+  - expected: プレーヤ
+    pattern: プレーヤー
+
+  - expected: ブレーク
+    pattern: ブレイク
+
+  # ☆ロールプレイング☆
+  - expected: プレーン$1
+    pattern: /プレイン([^グ])/
+
+  - expected: プロパティ
+    pattern: プロパティー
+
+  # ヘビーユーザなどの場合
+  - expected: ヘビー
+    pattern: ヘヴィ
+
+  - expected: レビュア
+    pattern: /レビュアー|レビュワー|レビュワ|レビューアー|レビューア|レビューワー|レビューワ/
+
+  - expected: ビューア
+    pattern: /ビューアー|ビューワー|ビューワ/
+
+  - expected: ファイアウォール
+    pattern: /ファイアーウォール|ファイヤーウォール|ファイヤウォール|ファイヤーウオール/
+
+  - expected: フィルタ
+    pattern: フィルター
+
+  - expected: フィクスチャ
+    pattern: フィクスチャー
+
+  - expected: フェイルオーバー
+    pattern: /フェイルオーバ(?!ー)|フェールオーバー|フェールオーバ/
+    specs:
+      - from: フェイルオーバ
+        to:   フェイルオーバー
+      - from: フェイルオーバー
+        to:   フェイルオーバー
+
+  - expected: フェーズ
+    pattern: フェイズ
+
+  - expected: フッタ
+    pattern: /フッター|フッダ/
+
+  - expected: プロキシ
+    pattern: /プロクシ|プロクシー|プロキシー/
+
+  - expected: プログラマ
+    pattern: プログラマー
+
+  - expected: プロシージャ
+    pattern: プロシージャー
+
+  - expected: ブロードキャストレシーバ
+    pattern: /\bBroadcast receiver\b/
+
+  - expected: プロバイダ
+    pattern: プロバイダー
+
+  - expected: ベンダー
+    pattern: /ベンダ(?!ー)/
+    specs:
+      - from: ベンダ
+        to:   ベンダー
+      - from: ベンダー
+        to:   ベンダー
+
+  - expected: ヘッダ
+    pattern: /ヘッダー|ヘッタ|ヘッター/
+
+  - expected: ベクタ
+    pattern: ベクター
+
+  - expected: ページャ
+    pattern: ページャー
+
+  - expected: ポインタ
+    pattern: ポインター
+
+  - expected: ポリモフィズム
+    pattern: /ポリモルフィズム|ポリモーフィズム|ポルモルフィズム/
+
+  - expected: マトリックス
+    pattern: マトリクス
+
+  - expected: マッパ
+    pattern: /マッピングツール|マッパー/
+
+  - expected: マネジメント
+    pattern: マネージメント
+
+  - expected: メーカー
+    pattern: /メーカ(?!ー)/
+    specs:
+      - from: メーカ
+        to:   メーカー
+      - from: メーカー
+        to:   メーカー
+
+  - expected: メーリングリスト
+    pattern: /\bML\b/
+
+  - expected: メタファ
+    pattern: メタファー
+
+  - expected: メモリ
+    pattern: メモリー
+
+  - expected: メンテナンス
+    pattern: メインテナンス
+
+  - expected: メンテナ
+    pattern: メンテナー
+
+  # 人間の意味では「メンバー」、変数などは「メンバ」
+  - expected: メンバー$1
+    pattern: /メンバ([^ー])/
+
+  # 人間の意味では「リーダー」、readerの意味では「リーダ」
+  - expected: リーダー$1
+    pattern: /リーダ([^ー])/
+
+  - expected: レジューム
+    pattern: リジューム
+
+  - expected: ユーザ
+    pattern: ユーザー
+    specs:
+      - from: ユーザーは
+        to  : ユーザは
+
+  - expected: ユーティリティ
+    pattern: ユーティリティー
+
+  # 単体テストはケースバイケース
+  - expected: ユニットテスト
+    pattern: /Unitテスト|単体テスト/
+
+  - expected: ライブラリ
+    pattern: ライブラリー
+
+  - expected: ラッパ
+    pattern: ラッパー
+
+  # デグレは英語圏では使わない by Jenkins川口さん
+  - expected: リグレッション
+    pattern: /デグレード|デグレ/
+
+  - expected: リスナ
+    pattern: リスナー
+
+  - expected: リバースプロキシ
+    pattern: /\bReverse Proxy\b/
+
+  - expected: リファラ
+    pattern: リファラー
+
+  - expected: リポジトリ
+    pattern: /リポジトリー|レポジトリ|レポジトリー/
+
+  - expected: ルータ
+    pattern: ルーター
+
+  - expected: レジストリ
+    pattern: レジストリー
+
+  - expected: レイテンシ
+    pattern: レイテンシー
+
+  - expected: ローダ
+    pattern: ローダー
+
+  - expected: ワーカ
+    pattern: ワーカー
+
+  - expected: ワンタイムURL
+    pattern: /\bOnetime URL\b/
+
+  - expected: クアッドコアCPU
+    pattern: /\bQuad Core CPU\b/
+
+  - expected: クアッドコア
+    pattern: /クァッドコア|\bQuad Core\b|クァッドCore|Quadコア/
+
+  - expected: デュアルコアCPU
+    pattern: /\bDual Core CPU\b/
+
+  - expected: デュアルコア
+    pattern: /\bDual Core\b|デュアルCore|Dualコア/
+
+  # 人間の意味では「マスター」
+  - expected: マスタ$1
+    pattern: /マスター([^.])/
+
+  - expected: マスタ／スレーブ
+    pattern: マスタ・スレーブ
+
+  - expected: バックアップ$1
+    pattern: /\bBackup\b([^.])/
+
+  - expected: スレーブ$1
+    pattern: /スレイブ([^.])|\bSlave\b([^.])/
+
+  - expected: 記述子
+    pattern: ディスクリプタ
+
+  # ケースバイケース。XML系ファイルの場合、要素＝エレメント（＝タグ名）、属性＝アトリビュート
+  - expected: 属性
+    pattern: アトリビュート
+
+  - expected: 要素
+    pattern: エレメント
+
+  - expected: ActionController
+    pattern: /\bAction Controller\b/
+
+  - expected: ActionMailer
+    pattern: /\bAction Mailer\b/
+
+  - expected: ActionPack
+    pattern: /\bAction Pack\b/
+
+  - expected: ActionScript
+    pattern: /\bAction Script\b|アクションスクリプト/
+
+  # ★ActionScript2★
+  - expected: ActionScript $1
+    pattern: /ActionScript([0-9])/
+
+  - expected: ActionScript Virtual Machine
+    pattern: /\bActionScriptVirtualMachine\b|\bActionScript VirtualMachine\b/
+
+  - expected: ActionView
+    pattern: /\bAction View\b/
+
+  - expected: ActiveModel
+    pattern: /\bActive Model\b/
+
+  - expected: ActiveRecord
+    pattern: /\bActive Record\b/
+
+  - expected: ActiveResource
+    pattern: /\bActive Resource\b/
+
+  - expected: ActiveSupport
+    pattern: /\bActive Support\b/
+
+  - expected: Apache
+    pattern: /\bapache\b|\bApatch\b|\bapatch\b/
+
+  # ★Apache2★apatch2★
+  - expected: Apache $1$2
+    pattern: /Apache([0-9])|Apatch([0-9])/
+
+  - expected: ASP.NET
+    pattern: /ASP \.NET/
+
+  - expected: Bean
+    pattern: ビーン
+
+  - expected: Bigtable
+    pattern: /\bBigTable\b|\bBig Table\b|\bBig table\b/
+
+  - expected: CakePHP
+    pattern: /\bCakePHP\b/i
+
+  # ★CakePHP2★
+  - expected: CakePHP $1
+    pattern: /CakePHP([0-9])/
+
+  - expected: Capistrano
+    pattern: /\bCapistorano\b/
+
+  - expected: Chrome Web Store
+    pattern: /Chromeウェブストア|Chrome Webストア/
+
+  - expected: Cygwin
+    pattern: /\bCygwin\b/i
+
+  - expected: DBFlute
+    pattern: /\bDBFlute\b/i
+
+  # ☆dena.jp☆
+  - expected: $1DeNA$2
+    pattern: /(?:([^\/.])ディー・エヌ・エー)|(?:ディー・エヌ・エー([^\/.]))/
+
+  # ☆dena.jp☆
+  - expected: $1DeNA$2
+    pattern: /(?:([^\/.])ディーエヌエー)|(?:ディーエヌエー([^\/.]))/
+
+  # ☆dena.jp☆
+  - expected: $1DeNA$2
+    pattern: /(?:([^\/.])\bDENA)|(?:DENA\b([^\/.]))/
+
+  - expected: Dreamweaver
+    pattern: /\bDreamWeaver\b/
+
+  - expected: easy_install
+    pattern: /\beasy_install\b/i
+
+  - expected: Eclipse
+    pattern: /\bEclipse\b/i
+
+  - expected: ECMAScript
+    pattern: /\bECMA Script\b/
+
+  - expected: EJB-JARファイル
+    pattern: /\bEJB-JARファイル\b/i
+
+  - expected: Elisp
+    pattern: /\bElisp\b/i
+
+  - expected: Lisp
+    pattern: /\bLisp\b/i
+
+  - expected: Emacs
+    pattern: /\bEmacs\b/i
+
+  # ★Emacs1★
+  - expected: Emacs $1
+    pattern: /Emacs([0-9])/
+
+  - expected: Emacs Lisp
+    pattern: /\bEmacs Lisp\b/i
+
+  - expected: EventMachine
+    pattern: /\bEventMachine\b/i
+
+  - expected: Excel
+    pattern: エクセル
+
+  # ☆facebook.com☆
+  - expected: $1Facebook$2
+    pattern: /(?:([^\/.])\bfacebook)|(?:facebook\b([^\/.]))/
+
+  - expected: Firebug
+    pattern: /\bFirebug\b/i
+
+  - expected: Firefox
+    pattern: /\bFireFox\b|\bFire Fox\b|ファイアーフォックス|ファイヤーフォックス/
+
+  - expected: Flash
+    pattern: フラッシュ
+
+  - expected: Flash Lite
+    pattern: /\bFlashLite\b/
+
+  - expected: Flash Player
+    pattern: /Flashプレイヤー|Flash プレイヤー|Flashプレーヤ|Flash プレーヤ|Flashプレーヤー|Flash プレーヤー|\bFlashPlayer\b/
+
+  - expected: Flashプラットフォーム
+    pattern: /\bFlash Platform\b/
+
+  - expected: Flex Builder
+    pattern: /\bFlexBuilder\b/
+
+  - expected: Gears
+    pattern: /\bGoogleGears\b|\bGoogle Gears\b/
+
+  - expected: GHCi
+    pattern: /\bGHCi\b/i
+
+  - expected: Git
+    pattern: /\bGit\b/i
+
+  # ★github★GITHUB★☆/github☆
+  - expected: $1GitHub
+    pattern: /([^\/\.])\bgithub\b/
+
+  # ☆gmail☆
+  - expected: $1Gmail$2
+    pattern: /(?:([^\/.@])\bgmail)|(?:gmail\b([^\/.]))/
+
+  - expected: Google Gadget
+    pattern: Googleガジェット
+
+  - expected: Google Maps
+    pattern: /\bGoogle Map\b|\bGoogleMaps\b|\bGoogleMap\b|Googleマップ/
+
+  - expected: Greasemonkey
+    pattern: /\bGreaseMonkey\b|\bGrease monkey\b|\bGrease Monkey\b/
+
+  - expected: gzip
+    pattern: /\bgzip\b/i
+
+  - expected: Heartbeat
+    pattern: /\bHeartbeat\b/i
+
+  - expected: HTML5
+    pattern: HTML 5
+
+  # ★HTML4★
+  - expected: HTML $1
+    pattern: /HTML([0-4])/
+
+  # ☆Socket.io☆
+  - expected: $1I/O
+    pattern: /([^\.\s])\bIO\b/
+
+  - expected: ImageMagick
+    pattern: /\bImageMagick\b/i
+
+  # ★Internet Explorer4★
+  - expected: Internet Explorer $1
+    pattern: /Internet Explorer([0-9])/
+
+  # ★IE 6★
+  - expected: IE$1
+    pattern: /IE ([0-9])/
+
+  - expected: inode
+    pattern: iノード
+
+  # IOS SDK
+  - expected: iOS SDK
+    pattern: /\biOS SDK\b/i
+
+  - expected: ISO
+    pattern: ISO-
+
+  # ★ISO9★
+  - expected: ISO $1
+    pattern: /ISO([0-9])/
+
+  - expected: iPad
+    pattern: /\biPad\b/i
+
+  - expected: iPhone
+    pattern: /\biPhone\b/i
+
+  - expected: Jade
+    pattern: /\bJade\b/i
+
+  - expected: JARファイル
+    pattern: /\bJARファイル\b/i
+
+  # ★Java6★
+  - expected: Java $1
+    pattern: /Java([0-9])/
+
+  - expected: Java 3D
+    pattern: Java3D
+
+  - expected: Java EE
+    pattern: /\bJavaEE\b/
+
+  # ★JavaEE5★
+  - expected: Java EE $1
+    pattern: /JavaEE([0-9])/
+
+  # ★Java EE5★
+  - expected: Java EE $1
+    pattern: /Java EE([0-9])/
+
+  - expected: Java SE
+    pattern: /\bJavaSE\b/
+
+  # ★JavaSE5★
+  - expected: Java SE $1
+    pattern: /JavaSE([0-9])/
+
+  # ★Java SE5★
+  - expected: Java SE $1
+    pattern: /Java SE([0-9])/
+
+  - expected: JavaBeans
+    pattern: /\bJavaBean\b|\bJava Bean\b|\bJava Beans\b/
+
+  - expected: Javadoc
+    pattern: /\bJavadoc\b/i
+
+  - expected: JavaServer Faces
+    pattern: /\bJava Server Faces\b/
+
+  - expected: JavaServer Pages
+    pattern: /\bJava Server Pages\b/
+
+  - expected: Jenkins
+    pattern: /\bJenkins\b/i
+
+  # ★JDK5★
+  - expected: JDK $1
+    pattern: /JDK([0-9])/
+
+  - expected: JPEG
+    pattern: /\bJPEG\b/i
+
+  # ★JSF1★
+  - expected: JSF $1
+    pattern: /JSF([0-9])/
+
+  # ★JSP1★
+  - expected: JSP $1
+    pattern: /JSP([0-9])/
+
+  - expected: JVM
+    pattern: /\bJava VM\b|\bJavaVM\b/
+
+  - expected: key-value
+    pattern: /Key-Value|キーバリュー|キー・バリュー|キー／バリュー/
+
+  - expected: KitchenSink
+    pattern: /\bKitchenSink\b/i
+
+  - expected: Kyoto Cabinet
+    pattern: /\bKyotoCabinet\b/
+
+  # ★Tokyo   Tycoon★TokyoTycoon★
+  - expected: Kyoto Tycoon
+    pattern: /\bKyotoTycoon\b|Tokyo *Tycoon/
+
+  - expected: LL
+    pattern: LL言語
+
+  - expected: Mac OS
+    pattern: /\bMacOS\b/
+
+  - expected: Mac OS X
+    pattern: /\bMacOSX\b/
+
+  - expected: MacBook
+    pattern: /\bMac Book\b/
+
+  - expected: MacPorts
+    pattern: /\bMacPorts\b/i
+
+  - expected: Maven
+    pattern: /\bMaven\b/i
+
+  - expected: MeCab
+    pattern: /\bMeCab\b/i
+
+  - expected: memcached
+    pattern: /\bmemcached\b/i
+
+  # ☆microsoft.com☆
+  - expected: $1Microsoft$2
+    pattern: /(?:([^\/.])マイクロソフト)|(?:マイクロソフト([^\/.]))/
+
+  # ☆microsoft.com☆
+  - expected: $1Microsoft$2
+    pattern: /(?:([^\/.])\bmicrosoft)|(?:microsoft\b([^\/.]))/
+
+  - expected: Migemo
+    pattern: /\bMigemo\b/i
+
+  - expected: mixi
+    pattern: /\bmixi\b/i
+
+  - expected: MongoDB
+    pattern: /\bMongo DB\b/
+
+  - expected: MySQL
+    pattern: /\bMySQL\b/i
+
+  # ★Nagios1★
+  - expected: Nagios $1
+    pattern: /Nagios([0-9])/
+
+  - expected: nginx
+    pattern: /\bnginx\b/i
+
+  - expected: Node.js
+    pattern: /\bNode.js\b/i
+
+  - expected: OAuth
+    pattern: /\bOAuth\b/i
+
+  - expected: OmniAuth
+    pattern: /\bOmniAuth\b/i
+
+  - expected: OpenGL
+    pattern: /\bOpen GL\b/
+
+  - expected: OS
+    pattern: オペレーティングシステム
+
+  - expected: PC
+    pattern: パソコン
+
+  - expected: Pentium 4
+    pattern: /\bPentium IV\b/
+
+  - expected: Pentium II
+    pattern: /Pentium 2|Pentium2/
+
+  - expected: Pentium III
+    pattern: /Pentium 3|Pentium3/
+
+  # ★Perl5★
+  - expected: Perl $1
+    pattern: /Perl([0-9])/
+
+  - expected: Perl
+    pattern: /\bPerl\b/i
+
+  - expected: Photoshop
+    pattern: /\bPhotoShop\b|\bphotoshop\b|フォトショップ/
+
+  # ★PHP5★
+  - expected: PHP $1
+    pattern: /PHP([0-9])/
+
+  - expected: PHPUnit
+    pattern: /\bPHPUnit\b/i
+
+  - expected: ping
+    pattern: /\bping\b/i
+
+  - expected: pip
+    pattern: /\bpip\b/i
+
+  - expected: pixiv
+    pattern: /\bpixiv\b/i
+
+  - expected: POPFile
+    pattern: /\bPOPFile\b/i
+
+  - expected: PostScript
+    pattern: /\bPostScript\b/i
+
+  # ★PostgreSQL8★
+  - expected: PostgreSQL $1
+    pattern: /PostgreSQL([0-9])/
+
+  - expected: Python
+    pattern: /\bPython\b/i
+
+  - expected: RADIUS
+    pattern: /\bRADIUS\b/i
+
+  # ★Rails3★
+  - expected: Rails $1
+    pattern: /Rails([0-9])/
+
+  - expected: Rake
+    pattern: /\bRake\b/i
+
+  - expected: Red Hat
+    pattern: /\bRedHat\b|\bRedhat\b|\bredhat\b|\bRedHad\b|\bRedhad\b|\bredhad\b|レッドハット/
+
+  - expected: Red Hat Linux
+    pattern: /\bRedHatLinux\b|\bRedHat Linux\b/
+
+  # ★Red Hat Linux1★
+  - expected: Red Hat Linux $1
+    pattern: /Red Hat Linux([0-9])|RedHatLinux([0-9])|RedHat Linux([0-9])/
+
+  - expected: Redis
+    pattern: /\bRedis\b/i
+
+  - expected: RELAX NG
+    pattern: /\bRELAX NG\b/i
+
+  # ★RFC1★
+  - expected: RFC $1
+    pattern: /RFC([0-9])/
+
+  - expected: RPCサービス
+    pattern: /\bRPC Services\b/
+
+  - expected: Ruby
+    pattern: /\bRuby\b/i
+
+  # ★Ruby1★
+  - expected: Ruby $1
+    pattern: /Ruby([0-9])/
+
+  - expected: Ruby on Rails
+    pattern: /\bRuby On Rails\b|\bRoR\b/
+
+  - expected: RubyGems
+    pattern: /\bRubyGems\b/i
+
+  - expected: RubyGems
+    pattern: /\bRuby Gems\b/
+
+  # ★SAML2★
+  - expected: SAML $1
+    pattern: /SAML([0-9])/
+
+  - expected: Scheme
+    pattern: /\bScheme\b/i
+
+  # ★Servlet2★
+  - expected: Servlet $1
+    pattern: /Servlet([0-9])/
+
+  - expected: Silverlight
+    pattern: /\bSilverLight\b|\bSilver Light\b/
+
+  - expected: SimpleTest
+    pattern: /\bSimpleTest\b/i
+
+  - expected: Sinatra
+    pattern: /\bSinatra\b/i
+
+  - expected: SkeedCast
+    pattern: /\bSkeedCast\b/i
+
+  - expected: $1Smalltalk$2
+    pattern: /(?:([^\/.])スモールトーク)|(?:スモールトーク([^\/.]))/
+
+  - expected: Socket.IO
+    pattern: /\bSocket.IO\b/i
+
+  - expected: $1SourceForge
+    pattern: /([^\/.])\bsourceforge\b/
+
+  - expected: SpiderMonkey
+    pattern: /\bSpiderMonkey\b/i
+
+  # ★SQL1★
+  - expected: SQL $1
+    pattern: /SQL([0-9])/
+
+  - expected: SQLite
+    pattern: /\bSQLite\b/i
+
+  - expected: Squid
+    pattern: /\bSquid\b/i
+
+  - expected: $1Subversion$2
+    pattern: /(?:([^\/.])\bSubVersion)|(?:SubVersion\b([^\/.]))/
+
+  - expected: $1Subversion$2
+    pattern: /(?:([^\/.])\bsubversion)|(?:subversion\b([^\/.]))/
+
+  - expected: Sun
+    pattern: /\bSun\b/i
+
+  - expected: SunRPC
+    pattern: /\bSun RPC\b/
+
+  - expected: SUSE
+    pattern: /\bSUSE\b/i
+
+  - expected: SWFファイル
+    pattern: /\bSWFファイル\b/i
+
+  - expected: Symfony2
+    pattern: Symfony 2
+
+  # ★Tomcat5★
+  - expected: Tomcat $1
+    pattern: /Tomcat([0-9])/
+
+  - expected: Twitter
+    pattern: /\bTwitter\b/i
+
+  - expected: Twitter
+    pattern: ツイッター
+
+  - expected: Tokyo Cabinet
+    pattern: /\bTokyoCabinet\b/
+
+  # ★Kyoto  Dystopia★
+  - expected: Tokyo Dystopia
+    pattern: /\bTokyoDystopia\b|Kyoto *Dystopia/
+
+  # ★Kyoto  Promenade★
+  - expected: Tokyo Promenade
+    pattern: /\bTokyoPromenade\b|Kyoto *Promenade/
+
+  # ★Kyoto  Tyrant★
+  - expected: Tokyo Tyrant
+    pattern: /\bTokyoTyrant\b|Kyoto *Tyrant/
+
+  - expected: Tritonn
+    pattern: /\bTriton\b|\btriton\b|\btritonn\b/
+
+  - expected: Ubuntu
+    pattern: /\bubuntu\b|\bUbuntsu\b|\bubuntsu\b|\bUbuntu Linux\b/
+
+  - expected: Unicode
+    pattern: /\bunicode\b|ユニコード/
+
+  - expected: UNIX
+    pattern: /\bUnix\b/
+
+  - expected: UTF-8
+    pattern: /UTF8|UTF 8|utf8/
+
+  # ★vim9★Vim8★
+  - expected: Vim $1
+    pattern: /vim([0-9])/
+
+  - expected: Vimスクリプト
+    pattern: /\bvim script\b/
+
+  - expected: Visual Basic
+    pattern: /\bVisualBasic\b|\bVB\b/
+
+  - expected: Visual Studio .NET
+    pattern: /Visual Studio\.NET/
+
+  - expected: VMware
+    pattern: /\bVMware\b/i
+
+  - expected: WARファイル
+    pattern: /\bWARファイル\b/i
+
+  - expected: Web API
+    pattern: /\bWebAPI\b|\bWEBAPI\b|\bWEB API\b/
+
+  - expected: Web UI
+    pattern: /\bWebUI\b/
+
+  - expected: WebLogic
+    pattern: /\bWeb Logic\b/
+
+  - expected: WebSphere
+    pattern: /\bWeb Sphere\b/
+
+  - expected: Wi-Fi
+    pattern: /\bWiFi\b/
+
+  - expected: Windows 2000
+    pattern: Windows2000
+
+  - expected: Windows 2000 Server
+    pattern: Windows Server 2000
+
+  - expected: Windows 3.
+    pattern: /Windows3\./
+
+  - expected: Windows 7
+    pattern: Windows7
+
+  - expected: Windows 95
+    pattern: Windows95
+
+  - expected: Windows 98
+    pattern: Windows98
+
+  - expected: Windows Me
+    pattern: /\bWindowsMe\b|\bWindowsME\b/
+
+  - expected: Windows NT
+    pattern: /\bWindowsNT\b/
+
+  - expected: Windows Server 2003
+    pattern: Windows 2003 Server
+
+  - expected: Windows Server 2008
+    pattern: Windows 2008 Server
+
+  - expected: Windows Vista
+    pattern: /\bWindowsVista\b/
+
+  - expected: Windows XP
+    pattern: /\bWindowsXP\b/
+
+  - expected: $1Word
+    pattern: /([^ースォ])ワード/
+
+  - expected: xAuth
+    pattern: /\bxAuth\b/i
+
+  - expected: Xcode
+    pattern: /\bXcode\b/i
+
+  - expected: XML Schema
+    pattern: /\bXML Schema\b/i
+
+  # Yahoo Mailという書き方は許可する
+  # http://yahooeng.tumblr.com/post/115664629471/automated-testing-in-yahoo-mail
+  - expected: "Yahoo!$1"
+    patterns:
+      - /\bYAHOO\b([^!.])/
+    specs:
+      - from: Yahoo Mail
+        to:   Yahoo Mail
+      - from: yahoo.com
+        to:   yahoo.com
+  # 日本語は!を必須にする
+  - expected: "Yahoo!$1"
+    patterns:
+      - /ヤフー([^!.])/
+    specs:
+      - from: Yahoo Mail
+        to:   Yahoo Mail
+      - from: ヤフーメール
+        to:   Yahoo!メール
+
+
+  - expected: "Yahoo!ウィジェット"
+    pattern: /\bYahooWidget\b|Yahoo\!Widget|Yahoo\! Widget|\bYahooGadget\b|Yahoo\!Gadget|Yahoo\! Gadget/
+
+  - expected: YouTube
+    pattern: /\bYoutube\b|\byoutube\b/
+
+  - expected: YSlow
+    pattern: /\bYSlow\b/i
+
+  - expected: ZIPファイル
+    pattern: /\bZIPファイル\b/i
+
+  - expected: オライリー・ジャパン$1
+    pattern: /オライリージャパン([^・])|オライリー([^・])/
+
+  - expected: ソフトバンク クリエイティブ
+    pattern: ソフトバンククリエイティブ
+
+  - expected: ピアソン・エデュケーション$1
+    pattern: /ピアソンエデュケーション([^・])/
+
+  - expected: $1qwikWeb$2
+    pattern: /(?:([^\/.])クイックウェブ)|(?:クイックウェブ([^\/.]))/
+
+  - expected: $1qwikWeb$2
+    pattern: /(?:([^\/.])クイックWeb)|(?:クイックWeb([^\/.]))/
+
+  - expected: $1C2 Wiki$2
+    pattern: /(?:([^.])C2ウィキ)|(?:C2ウィキ([^.]))/
+
+  - expected: $1SearchWiki$2
+    pattern: /(?:([^.])サーチウィキ)|(?:サーチウィキ([^.]))/
+
+  - expected: $1SearchWiki$2
+    pattern: /(?:([^.])サーチWiki)|(?:サーチWiki([^.]))/
+
+  - expected: $1MediaWiki$2
+    pattern: /(?:([^.])メディアウィキ)|(?:メディアウィキ([^.]))/
+
+  - expected: $1MediaWiki$2
+    pattern: /(?:([^.])メディアWiki)|(?:メディアWiki([^.]))/
+
+  - expected: $1HyperPerl$2
+    pattern: /(?:([^.])ハイパーパール)|(?:ハイパーパール([^.]))/
+
+  - expected: $1Nupedia$2
+    pattern: /(?:([^.])ヌーペディア)|(?:ヌーペディア([^.]))/
+
+  - expected: $1UseModWiki$2
+    pattern: /(?:([^.])ユースモッドウィキ)|(?:ユースモッドウィキ([^.]))/
+
+  - expected: $1UseModWiki$2
+    pattern: /(?:([^.])ユースモッドWiki)|(?:ユースモッドWiki([^.]))/
+
+  - expected: $1TiddlyWiki$2
+    pattern: /(?:([^.])ティドリーウィキ)|(?:ティドリーウィキ([^.]))/
+
+  - expected: $1TiddlyWiki$2
+    pattern: /(?:([^.])ティドリーWiki)|(?:ティドリーWiki([^.]))/
+
+  - expected: $1MeatballWiki$2
+    pattern: /(?:([^.])ミートボールウィキ)|(?:ミートボールウィキ([^.]))/
+
+  - expected: $1MeatballWiki$2
+    pattern: /(?:([^.])ミートボールWiki)|(?:ミートボールWiki([^.]))/
+
+  - expected: $1WikiWikiWeb$2
+    pattern: /(?:([^\/.])ウィキウィキウェブ)|(?:ウィキウィキウェブ([^\/.]))/
+
+  - expected: $1WikiWikiWeb$2
+    pattern: /(?:([^\/.])ウィキウィキWeb)|(?:ウィキウィキWeb([^\/.]))/
+
+  - expected: $1Wikia$2
+    pattern: /(?:([^.])ウィキア)|(?:ウィキア([^.]))/
+
+  - expected: $1Wikia$2
+    pattern: /(?:([^.])Wikiア)|(?:Wikiア([^.]))/
+
+  - expected: $1Wikimedia$2
+    pattern: /(?:([^\/.])ウィキメディア)|(?:ウィキメディア([^\/.]))/
+
+  - expected: $1Wikimedia$2
+    pattern: /(?:([^\/.])Wikiメディア)|(?:Wikiメディア([^\/.]))/
+
+  - expected: $1Wikipedia$2
+    pattern: /(?:([^\/.])\bWikiPedia)|(?:WikiPedia\b([^\/.]))/
+
+  - expected: $1Wikipedia$2
+    pattern: /(?:([^\/.])ウィキペディア)|(?:ウィキペディア([^\/.]))/
+
+  - expected: $1WikiBase$2
+    pattern: /(?:([^\/.])Wikiベース)|(?:Wikiベース([^\/.]))/
+
+  - expected: $1WikiBase$2
+    pattern: /(?:([^\/.])ウィキベース)|(?:ウィキベース([^\/.]))/
+
+  - expected: $1Wiki$2
+    pattern: /(?:([^\/.])\bwiki)|(?:wiki\b([^\/.]))/
+
+  - expected: $1Wiki$2
+    pattern: /(?:([^\/.])ウィキ)|(?:ウィキ([^\/.]))/
+
+  - expected: アクションクラス
+    pattern: Actionクラス
+
+  - expected: アクションリスナ
+    pattern: /\bActionListener\b|\bAction Listener\b|\bActionListener\b/
+
+  - expected: アクションマッピング
+    pattern: /Actionマッピング|\bAction Mapping\b/
+
+  - expected: アクションフォームBean
+    pattern: /\bActionFormBean\b|\bActionFormBeans\b|\bActionForm Bean\b/
+
+  - expected: アクションフォーム
+    pattern: /\bAction Form\b|\bActionForm\b/
+
+  - expected: アクションサーブレット
+    pattern: /\bActionServlet\b|\bAction Servlet\b|Actionサーブレット/
+
+  - expected: フォームBean
+    pattern: /\bForm Bean\b|フォームビーン/
+
+  - expected: リクエストオブジェクト
+    pattern: Requestオブジェクト
+
+  - expected: レスポンスオブジェクト
+    pattern: Responseオブジェクト
+
+  - expected: セッションオブジェクト
+    pattern: Sessionオブジェクト
+
+  - expected: インタフェース
+    pattern: /インタフェイス|インターフェイス|インターフェース|インターフェィス/
+
+  - expected: リモートインタフェース
+    pattern: Remoteインタフェース
+
+  - expected: ホームインタフェース
+    pattern: Homeインタフェース
+
+  - expected: ローカルインタフェース
+    pattern: Localインタフェース
+
+  - expected: サービスインタフェース
+    pattern: Serviceインタフェース
+
+  - expected: エンティティBean
+    pattern: /\bEntity Bean\b|\bentity bean\b/
+
+  - expected: セッションBean
+    pattern: /\bsession bean\b|\bSession Bean\b/
+
+  # 本文中では
+  - expected: ％$1
+    pattern: /%([^0123456789])/
+
+  # カタカナの後ろの中黒「・」をトルツメ。★ア・★
+  - expected: $1
+    pattern: /([ァ-ヶ])・/
+
+  - expected: …
+    pattern: /・・・|･･･/
+
+  # ダーシ、ダーシとケイ混在
+  - expected: ──
+    pattern: /――|─―|―─/
+
+  - expected: "!?"
+    pattern: ！？
+
+  - expected: "?!"
+    pattern: ？！
+
+  - expected: "!!"
+    pattern: ！！
+
+  - expected: "??"
+    pattern: ？？
+
+  # ★！？あ★●「行末ではない」という指定が無理みたい●
+  - expected: "!? $1"
+    pattern: /！？([^\n\s「」『』（）［］])/
+
+  # ★!?あ★
+  - expected: "!? $1"
+    pattern: /\!\?([^\n\s「」『』（）［］])/
+
+  # ★？！あ★
+  - expected: "?! $1"
+    pattern: /？！([^\n\s「」『』（）［］])/
+
+  # ★?!あ★
+  - expected: "?! $1"
+    pattern: /\?\!([^\n\s「」『』（）［］])/
+
+  # ★？？あ★
+  - expected: "?? $1"
+    pattern: /？？([^\n\s「」『』（）［］])/
+
+  # ★??あ★
+  - expected: "?? $1"
+    pattern: /\?\?([^\n\s「」『』（）［］])/
+
+  # ★！あ★
+  - expected: ！ $1
+    pattern: /！([^\n\s「」『』（）［］])/
+
+  # ★？あ★
+  - expected: ？ $1
+    pattern: /？([^\n\s「」『』（）［］★])/
+
+  # かけ算。★0x9★
+  - expected: $1×$2
+    pattern: /([0-9])x([0-9])/
+
+  - expected: （10）
+    pattern: /⑩|10．/
+
+  - expected: （1）
+    pattern: /①|1．/
+
+  - expected: （2）
+    pattern: /②|2．/
+
+  - expected: （3）
+    pattern: /③|3．/
+
+  - expected: （4）
+    pattern: /④|4．/
+
+  - expected: （5）
+    pattern: /⑤|5．/
+
+  - expected: （6）
+    pattern: /⑥|6．/
+
+  - expected: （7）
+    pattern: /⑦|7．/
+
+  - expected: （8）
+    pattern: /⑧|8．/
+
+  - expected: （9）
+    pattern: /⑨|9．/
+
+  - expected: IV
+    pattern: Ⅳ
+
+  - expected: iv
+    pattern: ⅳ
+
+  - expected: VI
+    pattern: Ⅵ
+
+  - expected: vi
+    pattern: ⅵ
+
+  - expected: VII
+    pattern: Ⅶ
+
+  - expected: vii
+    pattern: ⅶ
+
+  - expected: VIII
+    pattern: Ⅷ
+
+  - expected: viii
+    pattern: ⅷ
+
+  - expected: IX
+    pattern: Ⅸ
+
+  - expected: ix
+    pattern: ⅸ
+
+  # 全角括弧前後の空白を除去
+  - expected: （
+    pattern: /（|（/
+
+  # 全角括弧前後の空白を除去
+  - expected: ）
+    pattern: /） | ）/
+
+  - expected: （
+    pattern: /．（|。（/
+
+  # 。は括弧の内側に
+  - expected: ）。
+    pattern: 。）
+
+  - expected: ）、
+    pattern: 、）
+
+  # ★文末なのでここでは検証できない★
+  - expected: ）。$1
+    pattern: /）(\n)/
+
+  - expected: 「
+    pattern: ｢
+
+  - expected: 」
+    pattern: ｣
+
+  - expected: 」「
+    pattern: 」、「
+
+  - expected: 」
+    pattern: 。」
+
+  # ★1Mバイト★十メガバイト★
+  - expected: $1MB
+    pattern: /([\d十百千万])Mバイト|([\d十百千万])メガバイト/
+
+  # ★1Gバイト★十ギガバイト★
+  - expected: $1GB
+    pattern: /([\d十百千万])Gバイト|([\d十百千万])ギガバイト/
+
+  # ★1Kバイト★十キロバイト★
+  - expected: $1KB
+    pattern: /([\d十百千万])Kバイト|([\d十百千万])キロバイト/
+
+  # ★1Tバイト★十テラバイト★
+  - expected: $1TB
+    pattern: /([\d十百千万])Tバイト|([\d十百千万])テラバイト/
+
+  # ★1Pバイト★十ペタバイト★
+  - expected: $1PB
+    pattern: /([\d十百千万])Pバイト|([\d十百千万])ペタバイト/
+
+  # ★1pixel★十pixel★
+  - expected: $1ピクセル
+    pattern: /([\d十百千万])\bpx\b|([\d十百千万])\bpixel\b/
+
+  # ★1Bit★十Bit★
+  - expected: $1ビット
+    pattern: /([\d十百千万])\bbit\b|([\d十百千万])\bBit\b/
+
+  # ★1Kbps★十Kbps★
+  - expected: $1kbps
+    pattern: /([\d十百千万])\bKbps\b/
+
+  # ★1KHz★十KHz★
+  - expected: $1kHz
+    pattern: /([\d十百千万])\bKHz\b|([\d十百千万])\bKhz\b|([\d十百千万])\bkhz\b|([\d十百千万])\bKHZ\b|([\d十百千万])\bkHZ\b/
+
+  # ★1HZ★十HZ★
+  - expected: $1Hz
+    pattern: /([\d十百千万])\bhz\b|([\d十百千万])\bHZ\b/

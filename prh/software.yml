@@ -1,0 +1,30 @@
+# ソフトウェアや言語とか
+version: 1
+rules:
+  # WebStorm 9EAP→WebStorm 9 EAP
+  - expected: $1 EAP
+    pattern: /([0-9\.]+)EAP/
+
+  - expected: WebDriver
+    pattern: /\bWebDriver\b/i
+
+  - expected: Virtual Machine
+    pattern: Virtual machine
+    specs:
+      - from: MSEdgeが使えるWindows 10のVirtual machine(VM)が公開された
+        to: MSEdgeが使えるWindows 10のVirtual Machine(VM)が公開された
+
+  # https://www.webkit.org/
+  - expected: $1WebKit
+    patterns:
+      - /([^\-\w])webkit/i
+    specs:
+      - from: これはwebkitです
+        to:   これはWebKitです
+      - from: XXXwebkit
+        to:   XXXwebkit
+      - from: node-webkit
+        to:   node-webkit
+
+  - expected: OCaml
+  - expected: Windows
