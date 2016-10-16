@@ -17,10 +17,6 @@ You should install [prh](https://github.com/vvakame/prh "prh") or [textlint-rule
 
     git subtree pull --prefix=prh https://github.com/azu/prh.yml.git master --squash
 
-### Push updated rules(for developer)
-
-    git subtree push --prefix=prh https://github.com/azu/prh.yml.git master
-
 ## Setting of `prh.yml`
 
 You can import these prh dictionary files from main `prh.yml`.
