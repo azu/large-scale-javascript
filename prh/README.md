@@ -3,25 +3,43 @@
 
 ## Requirement
 
-You should install [prh](https://github.com/vvakame/prh "prh") too.
+You should install [prh](https://github.com/vvakame/prh "prh") or [textlint-rule-prh](https://github.com/azu/textlint-rule-prh/releases/tag/2.4.0 "textlint-rule-prh").
 
-- [vvakame/prh: proofreading helper](https://github.com/vvakame/prh)
-- [azu/textlint-rule-prh: textlint rule for prh.](https://github.com/azu/textlint-rule-prh)
-- [language-review](https://atom.io/packages/language-review)
+[textlint-rule-prh](https://github.com/azu/textlint-rule-prh/releases/tag/2.4.0 "textlint-rule-prh") with [textlint](https://github.com/textlint/textlint "textlint") >= 7.1.2
 
 ## Usage
 
 ### Add to your project
 
-    git subtree add --prefix=prh https://github.com/azu/prh.git master --squash
+    git subtree add --prefix=prh https://github.com/azu/prh.yml.git master --squash
 
 ### Update exist rules
 
-    git subtree pull --prefix=prh https://github.com/azu/prh.git master --squash
+    git subtree pull --prefix=prh https://github.com/azu/prh.yml.git master --squash
 
 ### Push updated rules(for developer)
 
-    git subtree push --prefix=prh https://github.com/azu/prh.git master
+    git subtree push --prefix=prh https://github.com/azu/prh.yml.git master
+
+## Setting of `prh.yml`
+
+You can import these prh dictionary files from main `prh.yml`.
+
+```yml
+version: 1
+imports:
+  - prh/ja/jser-info.yml
+  - prh/ja/kanji-open.yml
+  - prh/ja/spoken.yml
+  - prh/ja/typo.yml
+  - prh/javascript.yml
+  - prh/css.yml
+  - prh/software.yml
+rules:
+  # project configuration
+  - expected: Almin
+    patterns: /almin.js/i
+```
 
 ## Running tests
 
