@@ -63,23 +63,23 @@ Stateの更新がある場合は、Viewに向けたイベントを発する。
 - component/project下にHogeButton.jsを追加する。  
 - component/container下から、HogeButtonを利用したいcontainerを選び、HogeButton利用する。  
 
-詳細は [ComponentのREADME](./component.md) を参照して下さい。
+詳細は [ComponentのREADME](./component.md) を参照してください。
 
 ### UseCase の追加や利用
 すでにHogeButtonを利用した際のUseCaseがある場合は、container内でHogeButtonのハンドラを定義し、HogeButtonへ渡す。
 ※ project下ではUseCaseに依存させないため、containerでハンドラを定義する。
 
 UseCaseがない場合は新規に作成し、それを利用する。
-(詳細は [UseCase の README](./use-case.md) を参照して下さい。)
+(詳細は [UseCase の README](./use-case.md) を参照してください。)
 
 ### Domain の関数/プロパティの追加や変更
 既存の関数で要件が満たせない場合は、関数の追加や変更を行う。  
 また、新規プロパティが必要な場合は追加を行う。
-(詳細は [Domain の README](./domain.md) を参照して下さい。)
+(詳細は [Domain の README](./domain.md) を参照してください。)
 
 ### State の変更
 Domainの変更を受けてStateのプロパティの変更、getter関数を修正したりする。
-(詳細は [State の README](./store.md) を参照して下さい。)
+(詳細は [State の README](./store.md) を参照してください。)
 
 ### Component の変更
 Stateの変更により、表示内容に変更がある場合は、propsの追加や処理の変更を行う。

@@ -4,7 +4,7 @@
 ComponentとDomainをつなぐ。
 
 - 新規にEntityを作成し、Repositoryに保存
-- Repositoryから既存のEntityを取り出す
+- Repositoryから既存のEntityを取りだす
 - Entityに変更を加えて、Repository保存
 
 その際に必要な情報をInfraのAPIを使い外部と通信を行い取得したりする。
@@ -18,7 +18,7 @@ UseCaseは入れ子|拡張とすることもできるが、できるかぎりUse
 
 ### UseCaseを再利用する場合
 
-例) OuterUseCase#executeがInnerUseCaseを呼び出す。
+例) OuterUseCase#executeがInnerUseCaseを呼びだす。
 
 `InnerUseCase#execute()` の返り値(resolvedされた値)を使うOuterUseCaseは許容しない。
 execute関数では、非同期ならPromiseを返す、そうでないなら何も返さない。

@@ -169,3 +169,249 @@ rules:
   - expected: ちょうど
     pattern:  /(丁度|調度)/
     prh: 漢字で書かず、ひらがなで書くと読みやすくなります
+# JTF
+  - expected: あらかじめ
+    patterns: 予め
+  - expected: いずれ
+    patterns: 何れ
+  - expected: いつ
+    patterns: 何時
+  - expected: およそ
+    patterns: 凡そ
+  - expected: おもむろに
+    patterns: 徐に
+  - expected: かえって
+    patterns: 却って
+  - expected: かつ
+    patterns: 且つ
+  - expected: かもしれない
+    patterns: かも知れない
+  - expected: ください
+    patterns: 下さい
+    specs:
+      - from: 提出して下さい。
+        to  : 提出してください。
+  - expected: これほど
+    patterns: これ程
+  - expected: ご$1
+    patterns: /御(覧|意見)/
+    specs:
+      - from: 御覧ください
+        to:   ご覧ください
+      - from: 御意見
+        to:   ご意見
+  - expected: 子ども
+    patterns:
+      - 子供
+      - こども
+  # 接続詞 または 文頭であることを考慮する
+  - expected: $1さらに
+    patterns:
+      - /([\s。、\nぁ-んァ-ヶ])更に/
+    specs:
+      - from: Aは加速した、更に加速した。
+        to:   Aは加速した、さらに加速した。
+      - from: 加速すると更に加速した
+        to:   加速するとさらに加速した
+      - from: 変更に加えて
+        to:   変更に加えて
+  - expected: さらに
+    patterns: /^更に/
+    specs:
+      - from: 更に加速した。
+        to:   さらに加速した。
+  - expected: しかし
+    patterns: 然し
+  - expected: しばらく
+    patterns: 暫く
+  - expected: すなわち
+    patterns: 即ち
+  - expected: すべき
+    patterns: 可き
+  - expected: せっかく
+    patterns: 折角
+  - expected: たびたび
+    patterns: 度々
+  - expected: ただし
+    patterns: 但し
+  - expected: できる
+    patterns: 出来る
+  - expected: どこ
+    patterns: 何処
+  - expected: ないし
+    patterns: 乃至
+  - expected: なおさら
+    patterns: 尚さら
+  - expected: なかなか
+    patterns: 中々
+    specs:
+      - from: 中々できないことだ。
+        to:   なかなかできないことだ。
+  - expected: これほど
+    patterns: これ程
+  - expected: または
+    patterns: 又は
+  - expected: むしろ
+    patterns: 寧ろ
+  - expected: めったに
+    patterns: 滅多に
+
+  - expected: もはや
+    patterns: 最早
+  - expected: もしくは
+    patterns: 若しくは
+  - expected: もって
+    patterns:
+      - 以て
+      - 以って
+  - expected: のように
+    patterns: /の様に/
+    specs:
+      - from: 一様に
+        to:   一様に
+      - from: 〜の様に
+        to:   〜のように
+  - expected: よほど
+    patterns: 余程
+# 漢字で書く
+  - expected: 一切
+    patterns: いっさい
+  - expected: 必ず
+    patterns: かならず
+  - expected: 大いに
+    patterns: おおいに
+  - expected: 強いて
+    patterns: しいて
+  - expected: $1中
+    patterns: /(世界|日)じゅう/
+    spec:
+      - from: 一日じゅう
+        to:   一日中
+      - from: 世界じゅう
+        to  : 世界中
+  - expected: 時々
+    patterns: ときどき
+  - expected: 何しろ
+    patterns: なにしろ
+    specs:
+      - from: なにしろ困っている
+        to: 何しろ困っている
+  - expected: 何も
+    patterns: なにも
+    specs:
+      - from: なにも知らない
+        to:   何も知らない
+  - expected: 何らかの
+    patterns: なんらかの
+    specs:
+      - from: なんらかの策。
+        to:   何らかの策。
+  - expected: 何とも
+    patterns: なんとも
+    spec:
+      - from: なんとも言えない。
+        to:   何とも言えない。
+# 漢字を使い分ける
+  - expected: 箇所
+    patterns: 個所
+    prh: 「個」が表外音
+  - expected: 箇条書き
+    patterns: 個条書き
+    prh: 「個」が表外音
+  # 動詞では「付属する」が一般的
+  - expected: 付属する
+    patterns: 附属する
+    prh: 動詞では「付属する」が一般的
+  - expected: 摩耗
+    patterns: 磨耗
+    prh: 「摩」は「こする」、「磨」は「磨く（みがく）」の意味
+  - expected: 摩滅
+    patterns: 磨滅
+    prh: 「摩」は「こする」、「磨」は「磨く（みがく）」の意味
+  # 品詞・意味で使い分ける
+  - expected: および
+    patterns: 及び
+  - expected: が及ぶ
+    patterns: がおよぶ
+    specs:
+      - from: （例）影響がおよぶ。
+        to:   （例）影響が及ぶ。
+  - expected: 致す
+    patterns: いたす
+    specs:
+      - from: （例）思いをいたす。
+        to:   （例）思いを致す。
+  - expected: したがって
+    patterns: 従って
+    prh: （接続詞の場合）ひらがなを使う
+  - expected: 従う
+    patterns: したがう
+    prh: （動詞の場合）漢字を使う
+  - expected: $1だす
+    patterns: /(うり|売り|送り|さし|差し|造り|創り|とり|取り|はき|よび|呼び|よみ|読み|動き|笑い)出す/
+    specs:
+      - from: （例）動き出す。
+        to:   （例）動きだす。
+      - from: （例）笑い出す。
+        to:   （例）笑いだす。
+      - from: 探しだす
+        to:   探しだす
+  - expected: $1出す
+    patterns: /(探し|見つけ|見い)だす/
+    specs:
+      - from: 探しだす
+        to:   探し出す
+      - from: 見つけだす
+        to:   見つけ出す
+  - expected: $1付く
+    patterns: /(気が|利子が)つく/
+    prh: （動詞の場合）漢字を使う
+    specs:
+      - from: 気がつく。
+        to:   気が付く。
+      - from: 利子がつく。
+        to:   利子が付く。
+  - expected: 活気づく
+    patterns: 活気付く
+    prh: （接尾語の場合）ひらがなを使う
+    specs:
+      - from: 活気付く
+        to:   活気づく
+  - expected: 凍りつく
+    patterns: 凍り付く
+    specs:
+      - from: 凍り付く
+        to:   凍りつく
+  - expected: $1つき
+    patterns: /(手|目|腰)付き/
+    specs:
+      - from: 目付き。
+        to:   目つき。
+      - from: 手付き。
+        to:   手つき。
+  - expected: $1とおり
+    patterns: /(思った|以下の)通り/
+    specs:
+      - from: （例）思った通り。
+        to:   （例）思ったとおり。
+      - from: 以下の通りです。
+        to:   以下のとおりです。
+  - expected: $1通り
+    patterns: /(\d)とおり/
+    prh: "（数詞に付く場合）は漢字を使う"
+    specs:
+      - from: (例)2とおりの方法
+        to:   (例)2通りの方法
+  - expected: てほしい
+    patterns: て欲しい
+    prh: "(補助動詞の場合)ひらがなを使う"
+    specs:
+      - from: 物が欲しい
+        to:   物が欲しい
+      - from: 考えて欲しい
+        to:   考えてほしい
+  - expected: が欲しい
+    patterns: がほしい
+    specs:
+      - from: この本がほしい
+        to:   この本が欲しい
