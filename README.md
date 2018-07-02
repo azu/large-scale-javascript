@@ -84,9 +84,8 @@ Issue作ってそこに書くか、[Twitter][@azu_re]とか適当に聞いてく
 
 -----
 
-以下は雑多なポエムです。
 
-考え始めたときに「こういう情報を教えてくれる人がいれば助かったのにな」というのを書いたものです。
+以下は考え始めたときに「こういう情報を教えてくれる人がいれば助かったのにな」というのを書いたものです。
 
 Inspired by [https://github.com/tokuhirom/java-handbook](https://github.com/tokuhirom/java-handbook)
 
