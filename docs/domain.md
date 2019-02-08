@@ -2,7 +2,7 @@
 
 ## 原則
 
-ドメインは基本的にPlain Old Java Object(POJO)で書く。
+ドメインは基本的にPlain Old JavaScript Object(POJO)で書く。
 ライブラリへの依存は必要最低限のものとする。
 
 InfraのAPIクライアントなどは外から受け取るようにし、ドメインがInfraに依存してはいけない。

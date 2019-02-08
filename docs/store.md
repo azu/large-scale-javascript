@@ -1,14 +1,14 @@
 # Store
 
 ## 役割
-`State` を内包し、その参照を提供する。  
-Repositoryの変更イベントに対する処理をもつ。  
+`State` を内包し、その参照を提供する。
+Repositoryの変更イベントに対する処理をもつ。
 UseCaseのイベントをStateにつなぐ。
 
 # State
 
 ## 役割
-Domainの情報を、Componentが利用しやすい形に変換する。  
+Domainの情報を、Componentが利用しやすい形に変換する。
 UseCaseのイベントに対する処理をもつ。
 
 ## 原則
@@ -26,8 +26,8 @@ UseCaseのイベントに対する処理をもつ。
 entityと対応している場合はそのentity名が入る。
 
 ### ディレクトリの切り方
-Stateの入れ子は作らないため、基本的にはstore/ 直下にentity名でディレクトリを切り、  
-その下に`HogeStore.js`、`HogeStae.js`を配置する。  
+Stateの入れ子は作らないため、基本的にはstore/ 直下にentity名でディレクトリを切り、
+その下に`HogeStore.js`、`HogeState.js`を配置する。
 Componentを意識した形になるので、大きくなりすぎず、逆に細かく分けすぎて情報のかぶりがあまりでないようにStateを分ける。
 
 ### Component を意識したプロパティの作成
