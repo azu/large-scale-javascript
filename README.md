@@ -348,7 +348,7 @@ class CustomError extends Error {
 
 ## `assert`は外せるので積極的に入れる
 
-Node.jaの`assert`は積極的使っていきたい。
+Node.jsの`assert`は積極的使っていきたい。
 unassertを使えばproduction時に外すことが可能なので、開発中はassertをもっと使っていいはず。
 
 - https://github.com/twada/unassert
